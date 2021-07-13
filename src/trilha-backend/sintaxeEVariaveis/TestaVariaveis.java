@@ -3,6 +3,8 @@ package sintaxeEVariaveis;
 public class TestaVariaveis {
 
     public static void main(String[] args) {
+        System.out.printf("");
+        System.out.println();
         System.out.println("olá novo teste");
 
         int idade;
