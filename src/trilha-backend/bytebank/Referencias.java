@@ -2,19 +2,22 @@ package bytebank;
 
 public class Referencias {
     public static void main(String[] args) {
-        Conta primeiraConta = new Conta();
+        Conta primeiraConta = new Conta(2947, 3030);
 
-        primeiraConta.saldo = 300;
-        System.out.println("Saldo da primeira conta: " + primeiraConta.saldo);
+        primeiraConta.depositar(300);
+        System.out.println("Saldo da primeira conta: " + primeiraConta.getSaldo());
 
         Conta segundaConta = primeiraConta;
-        System.out.println("Saldo da segunda conta: " + segundaConta.saldo);
+        System.out.println("Saldo da segunda conta: " + segundaConta.getSaldo()
+);
 
-        segundaConta.saldo += 100;
-        System.out.println("Saldo da segunda conta: " + segundaConta.saldo);
+        segundaConta.depositar(100);
+        System.out.println("Saldo da segunda conta: " + segundaConta.getSaldo()
+);
 
-        primeiraConta.saldo += 100;
-        System.out.println("Saldo da segunda conta: " + segundaConta.saldo);
+        primeiraConta.depositar(100);
+        System.out.println("Saldo da segunda conta: " + segundaConta.getSaldo()
+);
 
         if(primeiraConta == segundaConta) {
             System.out.println("Contas iguais");
