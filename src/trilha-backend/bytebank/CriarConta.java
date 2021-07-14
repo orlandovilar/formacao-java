@@ -1,6 +1,6 @@
 package bytebank;
 
-public class CriaConta {
+public class CriarConta {
     public static void main(String[] args) {
         Conta primeiraConta = new Conta();
         primeiraConta.saldo = 200;
@@ -21,5 +21,11 @@ public class CriaConta {
         primeiraConta.agencia = 2947;
 
         System.out.println(primeiraConta.agencia);
+
+        if(primeiraConta == segundaConta) {
+            System.out.println("Contas iguais");
+        }else {
+            System.out.println("Contas diferentes");
+        }
     }
 }
