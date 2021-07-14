@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaWhile {
+public class While {
 
     public static void main(String[] args) {
         int contador = 0;

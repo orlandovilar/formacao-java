@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaSomatoria {
+public class Somatoria {
 
     public static void main(String[] args) {
         int contador = 0;

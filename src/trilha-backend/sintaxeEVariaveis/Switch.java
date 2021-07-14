@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaMes {
+public class Switch {
 
     public static void main(String[] args) {
 

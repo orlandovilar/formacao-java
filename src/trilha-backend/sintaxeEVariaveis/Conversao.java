@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaConversao {
+public class Conversao {
 
     public static void main(String[] args) {
         double salario = 1270.50;

@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaValores {
+public class Valores {
 
     public static void main(String[] args) {
         int primeiro = 5;

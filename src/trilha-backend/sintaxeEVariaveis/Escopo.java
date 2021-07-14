@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaEscopo {
+public class Escopo {
 
     public static void main(String[] args) {
         System.out.println("Testando Condicionais");

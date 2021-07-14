@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaVariaveis {
+public class Variaveis {
 
     public static void main(String[] args) {
         System.out.printf("");

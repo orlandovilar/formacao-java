@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaPontoFlutuante {
+public class PontoFlutuante {
 
     public static void main(String[] args) {
         double salario;

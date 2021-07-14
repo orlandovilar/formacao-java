@@ -1,6 +1,6 @@
 package sintaxeEVariaveis;
 
-public class TestaFor {
+public class For {
 
     public static void main(String[] args) {
         for(int contador = 0; contador <= 10; contador++) {
