@@ -5,4 +5,25 @@ public class Conta {
     int agencia;
     int numero;
     String titular;
+
+    public void depositar(double valor) {
+        this.saldo += valor;
+    }
+
+    public boolean sacar(double valor) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean transferir(double valor, Conta contaDestino) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            contaDestino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
 }
