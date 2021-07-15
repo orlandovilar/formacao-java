@@ -1,6 +1,6 @@
 package bytebankHerdado;
 
-public class Funcionario {
+public class FuncionarioVersao1 {
     private String nome;
     private String cpf;
     private double salario;
