@@ -1,5 +1,8 @@
 package bytebankHerdadoConta;
 
+/**
+ * @author José Orlando
+ */
 public abstract class Conta {
 
     protected double saldo;
