@@ -32,6 +32,4 @@ public abstract class FuncionarioVersao1 {
         return salario;
     }
 
-
-
 }

@@ -1,8 +1,8 @@
 package bytebankHerdadoConta;
 
-public class Conta {
+public abstract class Conta {
 
-    private double saldo;
+    protected double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
@@ -17,9 +17,7 @@ public class Conta {
         System.out.println("Estou criando uma conta " + this.numero);
     }
 
-    public void depositar(double valor) {
-        this.saldo = this.saldo + valor;
-    }
+    public abstract void depositar(double valor);
 
     public boolean sacar(double valor) {
         if(this.saldo >= valor) {

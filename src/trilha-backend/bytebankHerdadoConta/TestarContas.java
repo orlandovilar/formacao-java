@@ -16,5 +16,3 @@ public class TestarContas {
         System.out.println("CP: " + cp.getSaldo());
     }
 }
-
-        //Restante do código omitido
