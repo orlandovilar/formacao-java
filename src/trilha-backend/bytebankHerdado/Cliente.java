@@ -1,8 +1,8 @@
 package bytebankHerdado;
 
-public abstract class FuncionarioAutenticavel extends FuncionarioVersao1{
+public class Cliente implements Autenticavel {
     private int senha;
-
+    @Override
     public boolean autenticar(int senha) {
         if(this.senha == senha) {
             return true;
@@ -11,6 +11,7 @@ public abstract class FuncionarioAutenticavel extends FuncionarioVersao1{
         }
     }
 
+    @Override
     public void setSenha(int senha) {
         this.senha = senha;
     }
