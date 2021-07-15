@@ -2,7 +2,7 @@ package bytebankHerdado;
 
 public class TestarFuncionarioVersao1 {
     public static void main(String[] args) {
-        FuncionarioVersao1 orlando = new FuncionarioVersao1();
+        FuncionarioVersao1 orlando = new Gerente();
 
         orlando.setNome("José Orlando");
         orlando.setCpf("22222222222");
