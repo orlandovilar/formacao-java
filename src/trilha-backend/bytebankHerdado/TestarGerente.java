@@ -13,5 +13,7 @@ public class TestarGerente {
         System.out.println(gerente1.getSalario());
 
         System.out.println(gerente1.autenticar(2222));
+
+        System.out.println(gerente1.getBonificacao());
     }
 }
