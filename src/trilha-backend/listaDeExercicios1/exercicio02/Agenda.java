@@ -9,22 +9,22 @@ import java.util.List;
  */
 public class Agenda {
     private Integer index;
-    private List<Pessoa> agenda;
+    private List<Pessoa> pessoas;
 
     public Agenda() {
-        this.agenda = new ArrayList<>();
+        this.pessoas = new ArrayList<>();
     }
 
     public void adicionarPessoa(Pessoa pessoa) {
-        if(this.agenda.size() < 10) {
-            if(!this.agenda.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
-                this.agenda.add(pessoa);
-                System.out.println(pessoa.getNome() + " foi adicionado à Agenda com êxito.");
+        if(this.pessoas.size() < 10) {
+            if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+                this.pessoas.add(pessoa);
+                System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com êxito.");
             }else {
-                System.out.println(pessoa.getNome() + " já existe na Agenda!");
+                System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("Usuário não pode ser adicionado. Agenda cheia!");
+            System.out.println("\nUsuário não pode ser adicionado. Agenda cheia!");
         }
 
     }
@@ -32,40 +32,40 @@ public class Agenda {
     public void adicionarPessoa(String nome, Integer idade, Double altura) {
         Pessoa pessoa = new Pessoa(nome, idade, altura);
 
-        if(this.agenda.size() < 10) {
-            if(!this.agenda.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
-                this.agenda.add(pessoa);
-                System.out.println(pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
+        if(this.pessoas.size() < 10) {
+            if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+                this.pessoas.add(pessoa);
+                System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
             }else {
-                System.out.println(pessoa.getNome() + " já existe na Agenda!");
+                System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("Usuário não pode ser adicionado. A Agenda está cheia!");
+            System.out.println("\nA Pessoa não pôde ser adicionada. A Agenda está cheia!");
         }
 
     }
 
     public void removerPessoa(String nome) {
         boolean existe;
-        if(!this.agenda.isEmpty()) {
-            existe = this.agenda.stream().anyMatch(p -> p.getNome().matches(nome));
+        if(!this.pessoas.isEmpty()) {
+            existe = this.pessoas.stream().anyMatch(p -> p.getNome().matches(nome));
             if(existe) {
-                this.agenda.remove(this.agenda.get(buscarPessoa(nome)));
-                System.out.println(nome + " foi removido da Agenda com êxito.");
+                this.pessoas.remove(this.pessoas.get(buscarPessoa(nome)));
+                System.out.println("\n" + nome + " foi removido da Agenda com êxito.");
             }else {
-                System.out.println(nome + " não pertence à Agenda!");
+                System.out.println("\n" + nome + " não foi encontrada na Agenda!");
             }
         }else {
-            System.out.println("Não foi possível remover o usuário. A Agenda está vazia!");
+            System.out.println("\nNão foi possível remover a Pessoa. A Agenda está vazia!");
         }
 
     }
 
     public int buscarPessoa(String nome) {
-        if(this.agenda.stream().anyMatch(p -> p.getNome().matches(nome))) {
-           this.agenda.stream().
+        if(this.pessoas.stream().anyMatch(p -> p.getNome().matches(nome))) {
+           this.pessoas.stream().
                    filter(p -> p.getNome() == nome).
-                   map(p -> this.agenda.indexOf(p)).forEach(p -> this.index = p);
+                   map(p -> this.pessoas.indexOf(p)).forEach(p -> this.index = p);
         }else {
             this.index = -1;
         }
@@ -74,24 +74,34 @@ public class Agenda {
 
     public void imprimirPessoa(int index) {
 
-        if(this.agenda.stream().anyMatch(p -> this.agenda.indexOf(p) == index)) {
-            System.out.println("\nPessoa na posição " + index + " da Agenda:");
-            this.agenda.stream().
-                    filter(p -> this.agenda.indexOf(p) == index).
-                    forEach(p -> p.imprimirDados());
-        }else {
-            System.out.println("Usuário não encontrado. A Agenda está vazia!");
+        if (!this.pessoas.isEmpty()) {
+            if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index)) {
+                System.out.println("\nPosição " + (index + 1) + ":");
+                this.pessoas.stream().
+                        filter(p -> this.pessoas.indexOf(p) == index).
+                        forEach(p -> p.imprimirDados());
+            } else {
+                System.out.println("\nPosição não encontrada na Agenda!");
+            }
+        } else {
+            System.out.println("\nPosição não encontrada. A Agenda está vazia!");
         }
 
     }
 
     public void imprimirAgenda() {
-        if(!this.agenda.isEmpty()) {
-            System.out.println("Dados da Agenda:\n");
-            this.agenda.stream().forEach(p -> p.imprimirDados());
+        if(!this.pessoas.isEmpty()) {
+            System.out.println("\nDados da Agenda:\n");
+            this.pessoas.stream().forEach(p -> {
+                System.out.println("Posição " + (this.pessoas.indexOf(p) + 1) + ":");
+                p.imprimirDados();
+            });
         }else {
-            System.out.println("Não foi possível imprimir, a Agenda está vazia!");
+            System.out.println("\nA Agenda está vazia!");
         }
     }
 
+    public Integer getIndex() {
+        return index;
+    }
 }
