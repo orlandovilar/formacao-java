@@ -1,6 +1,7 @@
 package listaDeExercicios1;
 
 import listaDeExercicios1.exercicio01.Pessoa;
+import listaDeExercicios1.exercicio02.Agenda;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -11,6 +12,7 @@ import java.util.Calendar;
 public class TestarExercicios {
 
     public static void main(String[] args) throws ParseException {
+        // Testes para o Primeiro Quesito
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Calendar dataNascimento = Calendar.getInstance();
 
@@ -21,6 +23,44 @@ public class TestarExercicios {
         dataNascimento.setTime(formato.parse("06/11/1978"));
         Pessoa pessoa2 = new Pessoa("Gustavo Ghastine", dataNascimento.getTime(), 1.88);
         pessoa2.imprimirDados();
+
+        // Testes para o Segundo Quesito
+        Agenda agenda = new Agenda();
+
+        agenda.adicionarPessoa(pessoa1);
+        agenda.adicionarPessoa(pessoa2);
+        agenda.adicionarPessoa(pessoa1);
+        agenda.adicionarPessoa(pessoa2);
+        agenda.adicionarPessoa("Rayssa", 30, 1.60);
+        agenda.adicionarPessoa("Tayse", 30, 1.60);
+        agenda.adicionarPessoa("João", 30, 1.60);
+        agenda.adicionarPessoa("Fabrície", 30, 1.60);
+        agenda.adicionarPessoa("Pamela", 30, 1.60);
+        agenda.adicionarPessoa("Thiago", 30, 1.60);
+        agenda.adicionarPessoa("Renato", 30, 1.60);
+        agenda.adicionarPessoa("Teresa", 30, 1.60);
+        agenda.adicionarPessoa("Ana", 30, 1.60);
+        agenda.removerPessoa("Teresa");
+        agenda.removerPessoa("Ana");
+        agenda.adicionarPessoa("Ana", 30, 1.60);
+        agenda.adicionarPessoa("Ana", 30, 1.60);
+        agenda.imprimirPessoa(9);
+        agenda.imprimirAgenda();
+        agenda.removerPessoa("Ana");
+        agenda.removerPessoa("Renato");
+        agenda.removerPessoa("Thiago");
+        agenda.removerPessoa("Pamela");
+        agenda.removerPessoa("Fabrície");
+        agenda.removerPessoa("João");
+        agenda.removerPessoa("Tayse");
+        agenda.removerPessoa("Rayssa");
+        agenda.removerPessoa("Gustavo Ghastine");
+        agenda.removerPessoa("José Orlando");
+        agenda.removerPessoa("José Orlando");
+
+        System.out.println("Posição de " + pessoa1.getNome() + " na Agenda: " + agenda.buscarPessoa(pessoa1.getNome()));
+        System.out.println("Posição de " + pessoa2.getNome() + " na Agenda: " + agenda.buscarPessoa(pessoa2.getNome()));
+        System.out.println("Posição de Ana na Agenda: " + agenda.buscarPessoa("Ana"));
 
     }
 }

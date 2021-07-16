@@ -26,14 +26,20 @@ public class Pessoa {
         this.altura = altura;
     }
 
+    public Pessoa(){}
+
     public void imprimirDados() {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        System.out.println("\nDados da Pessoa:");
         System.out.println("Nome: " + this.nome);
-        System.out.println("Data de Nascimento: " + formato.format(this.dataNascimento.getTime()));
+        if(this.dataNascimento != null) {
+            System.out.println("Data de Nascimento: " + formato.format(this.dataNascimento.getTime()));
+            calcularIdade();
+        }else {
+            System.out.println("Data de Nascimento: não informado.");
+        }
         System.out.println("Altura: " + this.altura);
-        calcularIdade();
         System.out.println("Idade: " + this.idade);
+        System.out.printf("\n");
     }
 
     public void calcularIdade() {
