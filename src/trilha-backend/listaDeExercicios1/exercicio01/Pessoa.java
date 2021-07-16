@@ -2,6 +2,7 @@ package listaDeExercicios1.exercicio01;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -12,41 +13,45 @@ public class Pessoa {
     private Date dataNascimento;
     private Double altura;
     private Integer idade;
-    private SimpleDateFormat formato;
 
-    public Pessoa(String nome, String dataNascimento, Double altura) throws ParseException {
-        this.formato = new SimpleDateFormat("dd/MM/yyyy");
+    public Pessoa(String nome, Date dataNascimento, Double altura) {
         this.nome = nome;
-        this.dataNascimento = formato.parse(dataNascimento);
+        this.dataNascimento = dataNascimento;
         this.altura = altura;
-        this.idade = calcularIdade();
+    }
+
+    public Pessoa(String nome, Integer idade, Double altura) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
     }
 
     public void imprimirDados() {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         System.out.println("\nDados da Pessoa:");
         System.out.println("Nome: " + this.nome);
-        System.out.println("Data de Nascimento: " + this.formato.format(this.dataNascimento.getTime()));
+        System.out.println("Data de Nascimento: " + formato.format(this.dataNascimento.getTime()));
         System.out.println("Altura: " + this.altura);
+        calcularIdade();
         System.out.println("Idade: " + this.idade);
     }
 
-    public Integer calcularIdade() {
-        Date dataAtual = new Date();
-        int idade = 0;
+    public void calcularIdade() {
+        Calendar calendarioDataAtual = Calendar.getInstance();
+        Calendar calendarioDataAniversario = Calendar.getInstance();
+        calendarioDataAniversario.setTime(this.dataNascimento);
 
-        if(dataAtual.getMonth() > this.dataNascimento.getMonth()) {
-            idade = dataAtual.getYear() - this.dataNascimento.getYear();
-        }else if(dataAtual.getMonth() == this.dataNascimento.getMonth()) {
-            if(dataAtual.getDate() >= this.dataNascimento.getDate()) {
-                idade = dataAtual.getYear() - this.dataNascimento.getYear();
+        if(calendarioDataAtual.get(Calendar.MONTH) > calendarioDataAniversario.get(Calendar.MONTH)) {
+            this.idade = calendarioDataAtual.get(Calendar.YEAR) - calendarioDataAniversario.get(Calendar.YEAR);
+        }else if(calendarioDataAtual.get(Calendar.MONTH) == calendarioDataAniversario.get(Calendar.MONTH)) {
+            if(calendarioDataAtual.get(Calendar.DATE) >= calendarioDataAniversario.get(Calendar.DATE)) {
+                this.idade = calendarioDataAtual.get(Calendar.YEAR) - calendarioDataAniversario.get(Calendar.YEAR);
             }else {
-                idade = dataAtual.getYear() - this.dataNascimento.getYear() - 1;
+                this.idade = calendarioDataAtual.get(Calendar.YEAR) - calendarioDataAniversario.get(Calendar.YEAR) - 1;
             }
         }else {
-            idade = dataAtual.getYear() - this.dataNascimento.getYear() - 1;
+            this.idade = calendarioDataAtual.get(Calendar.YEAR) - calendarioDataAniversario.get(Calendar.YEAR) - 1;
         }
-
-        return idade;
     }
 
     public String getNome() {
