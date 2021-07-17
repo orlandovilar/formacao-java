@@ -94,14 +94,6 @@ public class TestarExercicios {
 
         elevador.entrar(pessoa1);
         elevador.entrar(pessoa1);
-        elevador.entrar(pessoa1);
-        elevador.entrar(pessoa1);
-        elevador.entrar(pessoa1);
-        elevador.entrar(pessoa1);
-        elevador.sair(pessoa1);
-        elevador.sair(pessoa1);
-        elevador.sair(pessoa1);
-        elevador.sair(pessoa1);
         elevador.sair(pessoa1);
         elevador.sair(pessoa1);
         elevador.entrar(pessoa1);
@@ -117,6 +109,7 @@ public class TestarExercicios {
         elevador.sair(pessoa3);
         elevador.sair(pessoa4);
         elevador.sair(pessoa5);
+        elevador.sair(pessoa6);
         elevador.sair(pessoa6);
         elevador.subir();
         elevador.subir();

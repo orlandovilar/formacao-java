@@ -7,15 +7,15 @@ import java.util.List;
 
 public class Elevador {
     private Integer andarAtual;
-    private Integer totalAndares;
     private Integer capacidade;
+    private Integer totalAndares;
     private Integer quantPessoas;
     private List<Pessoa> pessoas;
 
     public void inicializar(Integer capacidade, Integer totalAndares) {
         this.andarAtual = 0;
-        this.totalAndares = totalAndares;
         this.capacidade = capacidade;
+        this.totalAndares = totalAndares;
         this.quantPessoas = 0;
         this.pessoas = new ArrayList<>();
     }
@@ -35,16 +35,16 @@ public class Elevador {
     }
 
     public void sair(Pessoa pessoa) {
-        if(this.pessoas.contains(pessoa)) {
-            if(!this.pessoas.isEmpty()) {
+        if (!this.pessoas.isEmpty()) {
+            if (this.pessoas.contains(pessoa)) {
                 this.pessoas.remove(pessoa);
                 this.quantPessoas--;
                 System.out.println("\n" + pessoa.getNome() + " saiu no Elevador.");
-            }else {
-                System.out.println("\nO Elevador está vazio!");
+            } else {
+                System.out.println("\n" + pessoa.getNome() + " não está dentro do Elevador!");
             }
-        }else {
-            System.out.println("\n" + pessoa.getNome() + " não está dentro do Elevador!");
+        } else {
+            System.out.println("\nO Elevador está vazio!");
         }
     }
 
