@@ -2,6 +2,8 @@ package listaDeExercicios1;
 
 import listaDeExercicios1.exercicio01.Pessoa;
 import listaDeExercicios1.exercicio02.Agenda;
+import listaDeExercicios1.exercicio03.Elevador;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -12,7 +14,8 @@ import java.util.Calendar;
 public class TestarExercicios {
 
     public static void main(String[] args) throws ParseException {
-        // Testes para o Primeiro Quesito
+        // Testes para o 1º Quesito
+        System.out.println("> 1º Quesito - Pessoa:\n");
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Calendar dataNascimento = Calendar.getInstance();
 
@@ -24,7 +27,24 @@ public class TestarExercicios {
         Pessoa pessoa2 = new Pessoa("Gustavo Ghastine", dataNascimento.getTime(), 1.88);
         pessoa2.imprimirDados();
 
-        // Testes para o Segundo Quesito
+        dataNascimento.setTime(formato.parse("03/10/1994"));
+        Pessoa pessoa3 = new Pessoa("Rayssa", dataNascimento.getTime(), 1.53);
+        pessoa2.imprimirDados();
+
+        dataNascimento.setTime(formato.parse("10/12/1995"));
+        Pessoa pessoa4 = new Pessoa("Tayse", dataNascimento.getTime(), 1.72);
+        pessoa2.imprimirDados();
+
+        dataNascimento.setTime(formato.parse("02/02/1996"));
+        Pessoa pessoa5 = new Pessoa("Mácio", dataNascimento.getTime(), 1.76);
+        pessoa2.imprimirDados();
+
+        dataNascimento.setTime(formato.parse("01/01/1999"));
+        Pessoa pessoa6 = new Pessoa("Fabrície", dataNascimento.getTime(), 1.68);
+        pessoa2.imprimirDados();
+
+        // Testes para o 2º Quesito
+        System.out.println(">> 2º Quesito - Agenda:");
         Agenda agenda = new Agenda();
 
         agenda.adicionarPessoa(pessoa1);
@@ -34,12 +54,12 @@ public class TestarExercicios {
         agenda.imprimirAgenda();
         agenda.adicionarPessoa(pessoa1);
         agenda.adicionarPessoa(pessoa2);
-        agenda.adicionarPessoa("Rayssa", 30, 1.60);
-        agenda.adicionarPessoa("Tayse", 30, 1.60);
-        agenda.adicionarPessoa("João", 30, 1.60);
-        agenda.adicionarPessoa("Fabrície", 30, 1.60);
+        agenda.adicionarPessoa(pessoa3);
+        agenda.adicionarPessoa(pessoa4);
+        agenda.adicionarPessoa(pessoa5);
+        agenda.adicionarPessoa(pessoa6);
         agenda.adicionarPessoa("Pamela", 30, 1.60);
-        agenda.adicionarPessoa("Thiago", 30, 1.60);
+        agenda.adicionarPessoa("João", 30, 1.60);
         agenda.adicionarPessoa("Renato", 30, 1.60);
         agenda.adicionarPessoa("Teresa", 30, 1.60);
         agenda.adicionarPessoa("Ana", 30, 1.60);
@@ -65,6 +85,59 @@ public class TestarExercicios {
         agenda.removerPessoa("José Orlando");
         agenda.imprimirPessoa(0);
         agenda.imprimirAgenda();
+
+        // Testes para o 3º Quesito
+        System.out.println("\n>>> 3º Quesito - Elevador:");
+        Elevador elevador = new Elevador();
+
+        elevador.inicializar(5, 8);
+
+        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa1);
+        elevador.sair(pessoa1);
+        elevador.sair(pessoa1);
+        elevador.sair(pessoa1);
+        elevador.sair(pessoa1);
+        elevador.sair(pessoa1);
+        elevador.sair(pessoa1);
+        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa2);
+        elevador.entrar(pessoa3);
+        elevador.entrar(pessoa4);
+        elevador.entrar(pessoa5);
+        elevador.entrar(pessoa6);
+        elevador.sair(pessoa6);
+        elevador.sair(pessoa1);
+        elevador.entrar(pessoa6);
+        elevador.sair(pessoa2);
+        elevador.sair(pessoa3);
+        elevador.sair(pessoa4);
+        elevador.sair(pessoa5);
+        elevador.sair(pessoa6);
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.subir();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
+        elevador.descer();
 
     }
 }
