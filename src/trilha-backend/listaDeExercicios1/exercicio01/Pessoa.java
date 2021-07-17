@@ -1,6 +1,5 @@
 package listaDeExercicios1.exercicio01;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

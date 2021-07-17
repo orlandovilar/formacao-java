@@ -28,7 +28,10 @@ public class TestarExercicios {
         Agenda agenda = new Agenda();
 
         agenda.adicionarPessoa(pessoa1);
+        agenda.imprimirPessoa(1);
         agenda.adicionarPessoa(pessoa2);
+        agenda.imprimirPessoa(2);
+        agenda.imprimirAgenda();
         agenda.adicionarPessoa(pessoa1);
         agenda.adicionarPessoa(pessoa2);
         agenda.adicionarPessoa("Rayssa", 30, 1.60);

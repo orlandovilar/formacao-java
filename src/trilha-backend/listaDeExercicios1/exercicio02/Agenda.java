@@ -19,12 +19,12 @@ public class Agenda {
         if(this.pessoas.size() < 10) {
             if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
                 this.pessoas.add(pessoa);
-                System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com êxito.");
+                System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
             }else {
                 System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("\nUsuário não pode ser adicionado. Agenda cheia!");
+            System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
         }
     }
 
@@ -39,7 +39,7 @@ public class Agenda {
                 System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("\nA Pessoa não pôde ser adicionada. A Agenda está cheia!");
+            System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
         }
     }
 
@@ -54,7 +54,7 @@ public class Agenda {
                 System.out.println("\n" + nome + " não foi encontrada na Agenda!");
             }
         }else {
-            System.out.println("\nNão foi possível remover a Pessoa. A Agenda está vazia!");
+            System.out.println("\nNão foi possível remover " + nome + ". A Agenda está vazia!");
         }
     }
 
@@ -71,10 +71,10 @@ public class Agenda {
 
     public void imprimirPessoa(int index) {
         if (!this.pessoas.isEmpty()) {
-            if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index)) {
-                System.out.println("\nPosição " + (index + 1) + ":");
+            if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index - 1)) {
+                System.out.println("\nPosição " + index + ":");
                 this.pessoas.stream().
-                        filter(p -> this.pessoas.indexOf(p) == index).
+                        filter(p -> this.pessoas.indexOf(p) == index - 1).
                         forEach(p -> p.imprimirDados());
             } else {
                 System.out.println("\nPosição não encontrada na Agenda!");
