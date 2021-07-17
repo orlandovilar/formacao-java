@@ -47,7 +47,6 @@ public class TestarExercicios {
         agenda.imprimirPessoa(9);
         agenda.imprimirPessoa(10);
         agenda.imprimirAgenda();
-        System.out.println("Posição de Ana na Agenda: " + (agenda.buscarPessoa("Ana") + 1));
         agenda.removerPessoa("Ana");
         agenda.removerPessoa("Renato");
         agenda.removerPessoa("Thiago");
@@ -61,9 +60,6 @@ public class TestarExercicios {
         agenda.removerPessoa("José Orlando");
         agenda.imprimirPessoa(0);
         agenda.imprimirAgenda();
-
-        System.out.println("\nPosição de " + pessoa1.getNome() + " na Agenda: " + (agenda.buscarPessoa(pessoa1.getNome()) + 1));
-        System.out.println("\nPosição de " + pessoa2.getNome() + " na Agenda: " + (agenda.buscarPessoa(pessoa2.getNome()) + 1));
 
     }
 }

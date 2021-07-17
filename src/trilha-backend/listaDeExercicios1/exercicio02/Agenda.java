@@ -26,7 +26,6 @@ public class Agenda {
         }else {
             System.out.println("\nUsuário não pode ser adicionado. Agenda cheia!");
         }
-
     }
 
     public void adicionarPessoa(String nome, Integer idade, Double altura) {
@@ -42,7 +41,6 @@ public class Agenda {
         }else {
             System.out.println("\nA Pessoa não pôde ser adicionada. A Agenda está cheia!");
         }
-
     }
 
     public void removerPessoa(String nome) {
@@ -58,7 +56,6 @@ public class Agenda {
         }else {
             System.out.println("\nNão foi possível remover a Pessoa. A Agenda está vazia!");
         }
-
     }
 
     public int buscarPessoa(String nome) {
@@ -73,7 +70,6 @@ public class Agenda {
     }
 
     public void imprimirPessoa(int index) {
-
         if (!this.pessoas.isEmpty()) {
             if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index)) {
                 System.out.println("\nPosição " + (index + 1) + ":");
@@ -86,7 +82,6 @@ public class Agenda {
         } else {
             System.out.println("\nPosição não encontrada. A Agenda está vazia!");
         }
-
     }
 
     public void imprimirAgenda() {
