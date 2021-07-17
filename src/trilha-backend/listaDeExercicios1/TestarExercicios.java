@@ -58,8 +58,10 @@ public class TestarExercicios {
         agenda.removerPessoa("João");
         agenda.removerPessoa("Tayse");
         agenda.removerPessoa("Rayssa");
+        agenda.imprimirAgenda();
         agenda.removerPessoa("Gustavo Ghastine");
         agenda.removerPessoa("José Orlando");
+        agenda.imprimirPessoa(2);
         agenda.removerPessoa("José Orlando");
         agenda.imprimirPessoa(0);
         agenda.imprimirAgenda();

@@ -16,30 +16,30 @@ public class Agenda {
     }
 
     public void adicionarPessoa(Pessoa pessoa) {
-        if(this.pessoas.size() < 10) {
-            if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+        if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+            if(this.pessoas.size() < 10) {
                 this.pessoas.add(pessoa);
                 System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
             }else {
-                System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
+                System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
             }
         }else {
-            System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
+            System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
         }
     }
 
     public void adicionarPessoa(String nome, Integer idade, Double altura) {
         Pessoa pessoa = new Pessoa(nome, idade, altura);
 
-        if(this.pessoas.size() < 10) {
-            if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+        if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+            if(this.pessoas.size() < 10) {
                 this.pessoas.add(pessoa);
                 System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
             }else {
-                System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
+                System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
             }
         }else {
-            System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
+            System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
         }
     }
 
