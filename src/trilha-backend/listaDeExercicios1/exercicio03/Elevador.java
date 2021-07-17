@@ -1,10 +1,12 @@
 package listaDeExercicios1.exercicio03;
 
 import listaDeExercicios1.exercicio01.Pessoa;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author José Orlando R. Vilar
+ */
 public class Elevador {
     private Integer andarAtual;
     private Integer capacidade;

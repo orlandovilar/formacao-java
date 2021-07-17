@@ -3,10 +3,15 @@ package listaDeExercicios1;
 import listaDeExercicios1.exercicio01.Pessoa;
 import listaDeExercicios1.exercicio02.Agenda;
 import listaDeExercicios1.exercicio03.Elevador;
+import listaDeExercicios1.exercicio04.ControleRemoto;
+import listaDeExercicios1.exercicio04.Televisao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * @author José Orlando R. Vilar
@@ -93,9 +98,9 @@ public class TestarExercicios {
         elevador.inicializar(5, 8);
 
         elevador.entrar(pessoa1);
-        elevador.entrar(pessoa1);
+        elevador.entrar(pessoa2);
         elevador.sair(pessoa1);
-        elevador.sair(pessoa1);
+        elevador.sair(pessoa2);
         elevador.entrar(pessoa1);
         elevador.entrar(pessoa2);
         elevador.entrar(pessoa3);
@@ -131,6 +136,69 @@ public class TestarExercicios {
         elevador.descer();
         elevador.descer();
         elevador.descer();
+
+        // Testes para o 4º Quesito
+        System.out.println("\n>>>> 4º Quesito - Televisão:\n");
+
+        List<Integer> canais = Arrays.asList(3, 4, 6, 7, 9, 11, 13);
+
+        Televisao televisao = new Televisao(9, canais, new ControleRemoto(), 4);
+
+        televisao.getControle().aumentarVolume(televisao);
+        televisao.getControle().aumentarVolume(televisao);
+        televisao.getControle().aumentarVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+        televisao.getControle().diminuirVolume(televisao);
+
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().aumentarCanal(televisao);
+
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+
+        televisao.getControle().consultarVolume(televisao);
+        televisao.getControle().consultarCanal(televisao);
+
+        televisao.getControle().trocarCanal(13, televisao);
+        televisao.getControle().trocarCanal(3, televisao);
+        televisao.getControle().trocarCanal(5, televisao);
+
+        televisao.getControle().aumentarCanal(televisao);
+        televisao.getControle().diminuirCanal(televisao);
+
+        televisao.getControle().consultarVolume(televisao);
+        televisao.getControle().consultarCanal(televisao);
 
     }
 }
