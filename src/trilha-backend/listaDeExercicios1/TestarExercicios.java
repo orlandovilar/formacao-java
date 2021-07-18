@@ -5,7 +5,11 @@ import listaDeExercicios1.exercicio02.Agenda;
 import listaDeExercicios1.exercicio03.Elevador;
 import listaDeExercicios1.exercicio04.ControleRemoto;
 import listaDeExercicios1.exercicio04.Televisao;
+import listaDeExercicios1.exercicio05.Caminhao;
+import listaDeExercicios1.exercicio05.Controle;
+import listaDeExercicios1.exercicio05.Selecao;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,9 +22,9 @@ import java.util.List;
  */
 public class TestarExercicios {
 
-    public static void main(String[] args) throws ParseException {
-        // Testes para o 1º Quesito
-        System.out.println("> 1º Quesito - Pessoa:\n");
+    public static void main(String[] args) throws ParseException, IOException {
+        // Testes para 1ª Questão
+        System.out.println("> 1ª Questão - Pessoa:\n");
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Calendar dataNascimento = Calendar.getInstance();
 
@@ -48,8 +52,8 @@ public class TestarExercicios {
         Pessoa pessoa6 = new Pessoa("Fabrície", dataNascimento.getTime(), 1.68);
         pessoa2.imprimirDados();
 
-        // Testes para o 2º Quesito
-        System.out.println(">> 2º Quesito - Agenda:");
+        // Testes para 2ª Questão
+        System.out.println(">> 2ª Questão - Agenda:");
         Agenda agenda = new Agenda();
 
         agenda.adicionarPessoa(pessoa1);
@@ -91,8 +95,8 @@ public class TestarExercicios {
         agenda.imprimirPessoa(0);
         agenda.imprimirAgenda();
 
-        // Testes para o 3º Quesito
-        System.out.println("\n>>> 3º Quesito - Elevador:");
+        // Testes para 3ª Questão
+        System.out.println("\n>>> 3ª Questão - Elevador:");
         Elevador elevador = new Elevador();
 
         elevador.inicializar(5, 8);
@@ -137,8 +141,8 @@ public class TestarExercicios {
         elevador.descer();
         elevador.descer();
 
-        // Testes para o 4º Quesito
-        System.out.println("\n>>>> 4º Quesito - Televisão:\n");
+        // Testes para 4ª Questão
+        System.out.println("\n>>>> 4ª Questão - Televisão:\n");
 
         List<Integer> canais = Arrays.asList(3, 4, 6, 7, 9, 11, 13);
 
@@ -199,6 +203,13 @@ public class TestarExercicios {
 
         televisao.getControle().consultarVolume(televisao);
         televisao.getControle().consultarCanal(televisao);
+
+        // Testes para 5ª Questão
+        System.out.println("\n>>>>> 5ª Questão - Pluviômetros:");
+
+        Selecao selecao = new Selecao();
+        selecao.inserirCaminhoes();
+
 
     }
 }
