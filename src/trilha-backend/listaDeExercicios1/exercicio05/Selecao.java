@@ -2,7 +2,6 @@ package listaDeExercicios1.exercicio05;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Stream;
 
 /**
  * @author José Orlando R. Vilar
@@ -10,10 +9,10 @@ import java.util.stream.Stream;
 public class Selecao extends Controle {
 
     public static List<Caminhao> inserirCaminhoes(Map<Double, String> pluviometrosLista) throws IOException {
-        List<Caminhao> caminhoes = new ArrayList<Caminhao>();
+        List<Caminhao> caminhoes = new ArrayList<>();
         String tipoCaminhao = "";
         Integer totalPluviometros = 0;
-        List<String> pluviometrosCaminhao = new ArrayList<String>();
+        List<String> pluviometrosCaminhao = new ArrayList<>();
         Double capacidadeTotal = 0.0;
         Boolean existeTipoPluviometro;
         String pluviometro;
@@ -73,15 +72,14 @@ public class Selecao extends Controle {
 
             index = 0;
             capacidadeTotal = 0.0;
-            pluviometrosCaminhao = new ArrayList<String>();
+            pluviometrosCaminhao = new ArrayList<>();
         }
 
         return caminhoes;
     }
 
     public static void selecionarCaminhaoMaisApto(List<Caminhao> caminhoes) {
-        Caminhao caminhaoMaisApto = null;
-        Stream<Caminhao> stream;
+        Caminhao caminhaoMaisApto;
 
         if(caminhoes != null && !caminhoes.isEmpty()) {
             Comparator<Caminhao> maisApto = (caminhao1, caminhao2) -> {
@@ -96,7 +94,7 @@ public class Selecao extends Controle {
             System.out.println("Tipo do Caminhão: " + caminhaoMaisApto.getTipo());
             System.out.println("Quantidade de Pluviômetros: " + caminhaoMaisApto.getTotalPluviometros() + " pluviômetros");
             System.out.printf("Pluviômetros transportados:\n");
-            caminhaoMaisApto.getPluviometros().stream().forEach(p -> System.out.println("> " + p));
+            caminhaoMaisApto.getPluviometros().forEach(p -> System.out.println("> " + p));
             System.out.println("Capacidade Total de carga em cm²: " + caminhaoMaisApto.getCapacidadeTotal());
         }else {
             System.out.println("Nenhum Caminhão foi cadastrado!");
