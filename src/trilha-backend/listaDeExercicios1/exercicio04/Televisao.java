@@ -1,7 +1,5 @@
 package listaDeExercicios1.exercicio04;
 
-import bytebankHerdadoConta.Conta;
-
 import java.util.List;
 
 /**

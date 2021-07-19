@@ -18,7 +18,6 @@ public class Controle {
 
     public static Integer lerInteiro() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //StringTokenizer st = new StringTokenizer(br.readLine());
         Integer inteiro = 0;
         String string = br.readLine();
 

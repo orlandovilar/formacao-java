@@ -1,7 +1,6 @@
 package listaDeExercicios1.exercicio02;
 
 import listaDeExercicios1.exercicio01.Pessoa;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
