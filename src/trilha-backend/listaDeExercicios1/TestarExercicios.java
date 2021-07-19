@@ -49,7 +49,7 @@ public class TestarExercicios {
 
         // Testes para 2ª Questão
         System.out.println(">> 2ª Questão - Agenda:");
-        Agenda agenda = new Agenda();
+        Agenda agenda = new Agenda(new ArrayList<>());
 
         agenda.adicionarPessoa(pessoa1);
         agenda.imprimirPessoa(1);
@@ -66,6 +66,7 @@ public class TestarExercicios {
         agenda.adicionarPessoa("João", 30, 1.60);
         agenda.adicionarPessoa("Renato", 30, 1.60);
         agenda.adicionarPessoa("Teresa", 30, 1.60);
+        agenda.imprimirAgenda();
         agenda.adicionarPessoa("Ana", 30, 1.60);
         agenda.removerPessoa("Teresa");
         agenda.removerPessoa("Ana");

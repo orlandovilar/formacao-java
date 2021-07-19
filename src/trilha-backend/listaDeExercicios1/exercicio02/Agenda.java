@@ -11,8 +11,8 @@ public class Agenda {
     private Integer index;
     private List<Pessoa> pessoas;
 
-    public Agenda() {
-        this.pessoas = new ArrayList<>();
+    public Agenda(List<Pessoa> pessoas) {
+        this.pessoas = pessoas;
     }
 
     public void adicionarPessoa(Pessoa pessoa) {
