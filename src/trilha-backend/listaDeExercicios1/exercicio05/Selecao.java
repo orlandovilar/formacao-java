@@ -56,8 +56,11 @@ public class Selecao extends Controle {
                 index--;
             }
 
-            caminhao = new Caminhao(tipoCaminhao, totalPluviometros, pluviometrosCaminhao, capacidadeTotal);
-            caminhoes.add(caminhao);
+            if(totalPluviometros != 0) {
+                caminhao = new Caminhao(tipoCaminhao, totalPluviometros, pluviometrosCaminhao, capacidadeTotal);
+                caminhoes.add(caminhao);
+            }
+
             capacidadeTotal = 0.0;
             pluviometrosCaminhao = new ArrayList<String>();
 
@@ -77,21 +80,23 @@ public class Selecao extends Controle {
         Caminhao caminhaoMaisApto = null;
         Stream<Caminhao> stream;
 
-        if(caminhoes != null) {
+        if(caminhoes != null && !caminhoes.isEmpty()) {
             Comparator<Caminhao> maisApto = (caminhao1, caminhao2) -> {
-                if(caminhao1.getCapacidadeTotal() > caminhao2.getCapacidadeTotal()) return 1;
-                if(caminhao1.getCapacidadeTotal() < caminhao2.getCapacidadeTotal()) return -1;
+                if (caminhao1.getCapacidadeTotal() > caminhao2.getCapacidadeTotal()) return 1;
+                if (caminhao1.getCapacidadeTotal() < caminhao2.getCapacidadeTotal()) return -1;
                 return 0;
             };
 
             caminhaoMaisApto = caminhoes.stream().max(maisApto).get();
 
-            System.out.println("\nCaminhão Mais Apto:\n");
+            System.out.println("\n>>>>> Caminhão Mais Apto:\n");
             System.out.println("Tipo do Caminhão: " + caminhaoMaisApto.getTipo());
             System.out.println("Quantidade de Pluviômetros: " + caminhaoMaisApto.getTotalPluviometros() + " pluviômetros");
             System.out.printf("Pluviômetros transportados:\n");
-            caminhaoMaisApto.getPluviometros().stream().forEach(System.out::println);
-            System.out.println("Capacidade Total de carga: " + caminhaoMaisApto.getCapacidadeTotal());
+            caminhaoMaisApto.getPluviometros().stream().forEach(p -> System.out.println("> " + p));
+            System.out.println("Capacidade Total de carga em cm²: " + caminhaoMaisApto.getCapacidadeTotal());
+        }else {
+            System.out.println("Nenhum Caminhão foi cadastrado!");
         }
     }
 }

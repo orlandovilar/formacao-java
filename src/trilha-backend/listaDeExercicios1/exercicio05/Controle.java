@@ -20,7 +20,14 @@ public class Controle {
     public static Integer lerInteiro() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        Integer inteiro = Integer.parseInt(st.nextToken());
+        Integer inteiro = 0;
+        String string = st.nextToken();
+
+        if(string.matches("-?\\d+")) {
+            inteiro = Integer.parseInt(string);
+        }else {
+            System.out.println("Não é um número válido!");
+        }
 
         return inteiro;
     }
