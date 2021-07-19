@@ -153,6 +153,8 @@ public class TestarExercicios {
 
         Televisao televisao = new Televisao(9, canais, new ControleRemoto(), 4);
 
+        televisao.getControle().aumentarVolume(null);
+        televisao.getControle().diminuirVolume(null);
         televisao.getControle().aumentarVolume(televisao);
         televisao.getControle().aumentarVolume(televisao);
         televisao.getControle().aumentarVolume(televisao);
@@ -168,6 +170,8 @@ public class TestarExercicios {
         televisao.getControle().diminuirVolume(televisao);
         televisao.getControle().diminuirVolume(televisao);
 
+        televisao.getControle().aumentarCanal(null);
+        televisao.getControle().diminuirCanal(null);
         televisao.getControle().aumentarCanal(televisao);
         televisao.getControle().aumentarCanal(televisao);
         televisao.getControle().aumentarCanal(televisao);
@@ -196,9 +200,13 @@ public class TestarExercicios {
         televisao.getControle().diminuirCanal(televisao);
         televisao.getControle().diminuirCanal(televisao);
 
+        televisao.getControle().consultarVolume(null);
+        televisao.getControle().consultarCanal(null);
         televisao.getControle().consultarVolume(televisao);
         televisao.getControle().consultarCanal(televisao);
 
+
+        televisao.getControle().trocarCanal(1,null);
         televisao.getControle().trocarCanal(13, televisao);
         televisao.getControle().trocarCanal(3, televisao);
         televisao.getControle().trocarCanal(5, televisao);

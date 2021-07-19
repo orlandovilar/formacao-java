@@ -36,7 +36,7 @@ public class Elevador {
                 System.out.println("\n" + pessoa.getNome() + " já está dentro do Elevador!");
             }
         }else {
-            System.out.println("\n>> Pessoa inválida!");
+            System.out.println("\n>>> Pessoa inválida!");
         }
     }
 
@@ -54,7 +54,7 @@ public class Elevador {
                 System.out.println("\nO Elevador está vazio!");
             }
         }else {
-            System.out.println("\n>> Pessoa inválida!");
+            System.out.println("\n>>> Pessoa inválida!");
         }
     }
 

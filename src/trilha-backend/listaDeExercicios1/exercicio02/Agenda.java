@@ -28,7 +28,7 @@ public class Agenda {
                 System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("\n> Pessoa inválida!");
+            System.out.println("\n>> Pessoa inválida!");
         }
     }
 
