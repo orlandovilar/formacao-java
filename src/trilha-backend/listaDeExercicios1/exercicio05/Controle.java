@@ -11,14 +11,12 @@ public class Controle {
 
     public static String lerString() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String string = br.readLine();
-
-        return string;
+        return br.readLine();
     }
 
     public static Integer lerInteiro() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Integer inteiro = 0;
+        int inteiro = 0;
         String string = br.readLine();
 
         try {

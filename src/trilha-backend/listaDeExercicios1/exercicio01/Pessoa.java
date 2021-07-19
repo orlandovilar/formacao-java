@@ -25,8 +25,6 @@ public class Pessoa {
         this.altura = altura;
     }
 
-    public Pessoa(){}
-
     public void imprimirDados() {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         System.out.println("Nome: " + this.nome);
