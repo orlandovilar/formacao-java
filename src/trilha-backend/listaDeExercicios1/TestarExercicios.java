@@ -33,19 +33,19 @@ public class TestarExercicios {
 
         dataNascimento.setTime(formato.parse("03/10/1994"));
         Pessoa pessoa3 = new Pessoa("Rayssa", dataNascimento.getTime(), 1.53);
-        pessoa2.imprimirDados();
+        pessoa3.imprimirDados();
 
         dataNascimento.setTime(formato.parse("10/12/1995"));
         Pessoa pessoa4 = new Pessoa("Tayse", dataNascimento.getTime(), 1.72);
-        pessoa2.imprimirDados();
+        pessoa4.imprimirDados();
 
         dataNascimento.setTime(formato.parse("02/02/1996"));
         Pessoa pessoa5 = new Pessoa("Mácio", dataNascimento.getTime(), 1.76);
-        pessoa2.imprimirDados();
+        pessoa5.imprimirDados();
 
         dataNascimento.setTime(formato.parse("01/01/1999"));
         Pessoa pessoa6 = new Pessoa("Fabrície", dataNascimento.getTime(), 1.68);
-        pessoa2.imprimirDados();
+        pessoa6.imprimirDados();
 
         // Testes para 2ª Questão
         System.out.println(">> 2ª Questão - Agenda:");
