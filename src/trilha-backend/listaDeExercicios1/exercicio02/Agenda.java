@@ -16,15 +16,19 @@ public class Agenda {
     }
 
     public void adicionarPessoa(Pessoa pessoa) {
-        if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
-            if(this.pessoas.size() < 10) {
-                this.pessoas.add(pessoa);
-                System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
-            }else {
-                System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
+        if(pessoa != null) {
+            if (!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
+                if (this.pessoas.size() < 10) {
+                    this.pessoas.add(pessoa);
+                    System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
+                } else {
+                    System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
+                }
+            } else {
+                System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
+            System.out.println("\nPessoa inválida!");
         }
     }
 
@@ -71,10 +75,10 @@ public class Agenda {
 
     public void imprimirPessoa(int index) {
         if (!this.pessoas.isEmpty()) {
-            if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index - 1)) {
-                System.out.println("\nPosição " + index + ":");
+            if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index)) {
+                System.out.println("\nPosição " + (index + 1) + ":");
                 this.pessoas.stream().
-                        filter(p -> this.pessoas.indexOf(p) == index - 1).
+                        filter(p -> this.pessoas.indexOf(p) == index).
                         forEach(p -> p.imprimirDados());
             } else {
                 System.out.println("\nPosição não encontrada na Agenda!");
