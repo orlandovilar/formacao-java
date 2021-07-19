@@ -5,30 +5,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ * @author José Orlando R. Vilar
+ */
 public class Controle {
 
     public static String lerString() throws IOException {
-        String string = "";
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        string = st.nextElement().toString();
-
+        String string = br.readLine();
 
         return string;
     }
 
     public static Integer lerInteiro() throws IOException {
-        Integer inteiro = 0;
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
-        inteiro = Integer.parseInt(st.nextElement().toString());
-
-
-
+        Integer inteiro = Integer.parseInt(st.nextToken());
 
         return inteiro;
     }

@@ -1,19 +1,23 @@
 package listaDeExercicios1.exercicio05;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+
+import java.util.*;
 import java.util.stream.Stream;
 
+/**
+ * @author José Orlando R. Vilar
+ */
 public class Selecao extends Controle {
-    List<Caminhao> caminhoes;
 
-    public void inserirCaminhoes() throws IOException {
-        this.caminhoes = new ArrayList<Caminhao>();
+    public static List<Caminhao> inserirCaminhoes(Map<Double, String> pluviometrosLista) throws IOException {
+        List<Caminhao> caminhoes = new ArrayList<Caminhao>();
         String tipoCaminhao = null;
         Integer totalPluviometros = 0;
-        List<String> pluviometros = new ArrayList<String>();
+        List<String> pluviometrosCaminhao = new ArrayList<String>();
+        Double capacidadeTotal = 0.0;
+        Boolean existeTipoPluviometro;
+        String pluviometro;
         Integer index = 0;
         Caminhao caminhao;
 
@@ -33,14 +37,29 @@ public class Selecao extends Controle {
             index = totalPluviometros;
 
             while(index > 0) {
-                System.out.printf("Informe o Tipo do pluviômetro: ");
-                pluviometros.add(lerString());
+                do {
+                    System.out.printf("Informe o Tipo do pluviômetro " + pluviometrosLista.values() + ": " );
+                    pluviometro = lerString();
+                    existeTipoPluviometro = pluviometrosLista.containsValue(pluviometro);
+                    if(!existeTipoPluviometro) {
+                        System.out.println("Tipo de Pluviômetro inválido!\n");
+                    }else {
+                        pluviometrosCaminhao.add(pluviometro);
+                        for(Map.Entry<Double, String> pluviometroEntry : pluviometrosLista.entrySet()) {
+                            if(pluviometroEntry.getValue().matches(pluviometro)) {
+                                capacidadeTotal += pluviometroEntry.getKey();
+                            }
+                        }
+                    }
+                }while(!existeTipoPluviometro);
 
                 index--;
             }
-            caminhao = new Caminhao(tipoCaminhao, totalPluviometros, pluviometros);
-            this.caminhoes.add(caminhao);
-            pluviometros = new ArrayList<String>();
+
+            caminhao = new Caminhao(tipoCaminhao, totalPluviometros, pluviometrosCaminhao, capacidadeTotal);
+            caminhoes.add(caminhao);
+            capacidadeTotal = 0.0;
+            pluviometrosCaminhao = new ArrayList<String>();
 
             do {
                 System.out.printf("\nInforme o Tipo do Caminhão: ");
@@ -51,7 +70,7 @@ public class Selecao extends Controle {
             }while(!tipoCaminhao.matches("Alfa") && !tipoCaminhao.matches("Beta") && !tipoCaminhao.matches("Fim"));
         }
 
-        selecionarCaminhaoMaisApto(caminhoes);
+        return caminhoes;
     }
 
     public static void selecionarCaminhaoMaisApto(List<Caminhao> caminhoes) {
@@ -60,8 +79,8 @@ public class Selecao extends Controle {
 
         if(caminhoes != null) {
             Comparator<Caminhao> maisApto = (caminhao1, caminhao2) -> {
-                if(caminhao1.getTotalPluviometros() > caminhao2.getTotalPluviometros()) return 1;
-                if(caminhao1.getTotalPluviometros() < caminhao2.getTotalPluviometros()) return -1;
+                if(caminhao1.getCapacidadeTotal() > caminhao2.getCapacidadeTotal()) return 1;
+                if(caminhao1.getCapacidadeTotal() < caminhao2.getCapacidadeTotal()) return -1;
                 return 0;
             };
 
@@ -69,13 +88,10 @@ public class Selecao extends Controle {
 
             System.out.println("\nCaminhão Mais Apto:\n");
             System.out.println("Tipo do Caminhão: " + caminhaoMaisApto.getTipo());
-            System.out.println("Capacidade de Carga: " + caminhaoMaisApto.getTotalPluviometros() + " pluviômetros");
+            System.out.println("Quantidade de Pluviômetros: " + caminhaoMaisApto.getTotalPluviometros() + " pluviômetros");
             System.out.printf("Pluviômetros transportados:\n");
             caminhaoMaisApto.getPluviometros().stream().forEach(System.out::println);
+            System.out.println("Capacidade Total de carga: " + caminhaoMaisApto.getCapacidadeTotal());
         }
-    }
-
-    public List<Caminhao> getCaminhoes() {
-        return caminhoes;
     }
 }

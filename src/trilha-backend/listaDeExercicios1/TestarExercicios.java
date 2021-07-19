@@ -6,16 +6,12 @@ import listaDeExercicios1.exercicio03.Elevador;
 import listaDeExercicios1.exercicio04.ControleRemoto;
 import listaDeExercicios1.exercicio04.Televisao;
 import listaDeExercicios1.exercicio05.Caminhao;
-import listaDeExercicios1.exercicio05.Controle;
 import listaDeExercicios1.exercicio05.Selecao;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author José Orlando R. Vilar
@@ -207,8 +203,16 @@ public class TestarExercicios {
         // Testes para 5ª Questão
         System.out.println("\n>>>>> 5ª Questão - Pluviômetros:");
 
-        Selecao selecao = new Selecao();
-        selecao.inserirCaminhoes();
+        Map<Double, String> pluviometrosLista = new HashMap<>();
+        pluviometrosLista.put(81.1, "Sem Funil");
+        pluviometrosLista.put(165.1, "Com Funil");
+        pluviometrosLista.put(181.3, "Squitter");
+        pluviometrosLista.put(200.0, "Hellmann");
+        pluviometrosLista.put(471.1, "Texas");
+        pluviometrosLista.put(500.0, "Ville de Paris");
+
+        List<Caminhao> caminhoes = Selecao.inserirCaminhoes(pluviometrosLista);
+        Selecao.selecionarCaminhaoMaisApto(caminhoes);
 
 
     }
