@@ -28,7 +28,7 @@ public class Agenda {
                 System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
             }
         }else {
-            System.out.println("\nPessoa inválida!");
+            System.out.println("\n> Pessoa inválida!");
         }
     }
 
@@ -55,7 +55,7 @@ public class Agenda {
                 this.pessoas.remove(this.pessoas.get(buscarPessoa(nome)));
                 System.out.println("\n" + nome + " foi removido da Agenda com êxito.");
             }else {
-                System.out.println("\n" + nome + " não foi encontrada na Agenda!");
+                System.out.println("\n" + nome + " não foi encontrado na Agenda!");
             }
         }else {
             System.out.println("\nNão foi possível remover " + nome + ". A Agenda está vazia!");

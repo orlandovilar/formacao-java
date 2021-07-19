@@ -104,8 +104,10 @@ public class TestarExercicios {
 
         elevador.inicializar(5, 8);
 
+        elevador.entrar(null);
         elevador.entrar(pessoa1);
         elevador.entrar(pessoa2);
+        elevador.sair(null);
         elevador.sair(pessoa1);
         elevador.sair(pessoa2);
         elevador.entrar(pessoa1);

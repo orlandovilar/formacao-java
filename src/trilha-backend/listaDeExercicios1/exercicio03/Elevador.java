@@ -23,30 +23,38 @@ public class Elevador {
     }
 
     public void entrar(Pessoa pessoa) {
-        if(!this.pessoas.contains(pessoa)) {
-            if (this.capacidade > this.quantPessoas) {
-                this.pessoas.add(pessoa);
-                this.quantPessoas++;
-                System.out.println("\n" + pessoa.getNome() + " entrou no Elevador.");
+        if(pessoa != null) {
+            if (!this.pessoas.contains(pessoa)) {
+                if (this.capacidade > this.quantPessoas) {
+                    this.pessoas.add(pessoa);
+                    this.quantPessoas++;
+                    System.out.println("\n" + pessoa.getNome() + " entrou no Elevador.");
+                } else {
+                    System.out.println("\n" + pessoa.getNome() + " não pôde entrar. Elevador cheio!");
+                }
             } else {
-                System.out.println("\n" + pessoa.getNome() + " não pôde entrar. Elevador cheio!");
+                System.out.println("\n" + pessoa.getNome() + " já está dentro do Elevador!");
             }
         }else {
-            System.out.println("\n" + pessoa.getNome() + " já está dentro do Elevador!");
+            System.out.println("\n>> Pessoa inválida!");
         }
     }
 
     public void sair(Pessoa pessoa) {
-        if (!this.pessoas.isEmpty()) {
-            if (this.pessoas.contains(pessoa)) {
-                this.pessoas.remove(pessoa);
-                this.quantPessoas--;
-                System.out.println("\n" + pessoa.getNome() + " saiu no Elevador.");
+        if(pessoa != null) {
+            if (!this.pessoas.isEmpty()) {
+                if (this.pessoas.contains(pessoa)) {
+                    this.pessoas.remove(pessoa);
+                    this.quantPessoas--;
+                    System.out.println("\n" + pessoa.getNome() + " saiu no Elevador.");
+                } else {
+                    System.out.println("\n" + pessoa.getNome() + " não está dentro do Elevador!");
+                }
             } else {
-                System.out.println("\n" + pessoa.getNome() + " não está dentro do Elevador!");
+                System.out.println("\nO Elevador está vazio!");
             }
-        } else {
-            System.out.println("\nO Elevador está vazio!");
+        }else {
+            System.out.println("\n>> Pessoa inválida!");
         }
     }
 
