@@ -3,7 +3,6 @@ package listaDeExercicios1.exercicio05;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 /**
  * @author José Orlando R. Vilar
@@ -19,14 +18,14 @@ public class Controle {
 
     public static Integer lerInteiro() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        //StringTokenizer st = new StringTokenizer(br.readLine());
         Integer inteiro = 0;
-        String string = st.nextToken();
+        String string = br.readLine();
 
-        if(string.matches("-?\\d+")) {
+        if(string.matches("-?\\d+") && !string.isEmpty() && !string.isBlank()) {
             inteiro = Integer.parseInt(string);
         }else {
-            System.out.println("Não é um número válido!");
+            System.out.println(">> O número informado não é válido!");
         }
 
         return inteiro;

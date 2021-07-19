@@ -7,7 +7,6 @@ import listaDeExercicios1.exercicio04.ControleRemoto;
 import listaDeExercicios1.exercicio04.Televisao;
 import listaDeExercicios1.exercicio05.Caminhao;
 import listaDeExercicios1.exercicio05.Selecao;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

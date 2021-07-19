@@ -1,7 +1,6 @@
 package listaDeExercicios1.exercicio05;
 
 import java.io.IOException;
-
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -21,28 +20,34 @@ public class Selecao extends Controle {
         Integer index = 0;
         Caminhao caminhao;
 
-        System.out.printf("\nInserindo Caminhões:");
-
+        System.out.printf("\nInserindo Caminhões:\n");
+        System.out.println("\nTipos de Caminhão: [Alfa, Beta]");
         do {
-            System.out.printf("\nInforme o Tipo do Caminhão: ");
+            System.out.printf("\nInforme o Tipo do Caminhão ou digite 'Fim' para sair: ");
             tipoCaminhao = lerString();
             if(!tipoCaminhao.matches("Alfa") && !tipoCaminhao.matches("Beta") && !tipoCaminhao.matches("Fim")) {
-                System.out.println("Tipo do Caminhão só poder ser 'Alfa' ou 'Beta'. Digite 'Fim' para sair.");
+                System.out.println(">> O Tipo do Caminhão só poder ser 'Alfa' ou 'Beta'. Digite 'Fim' para sair.");
             }
         }while(!tipoCaminhao.matches("Alfa") && !tipoCaminhao.matches("Beta") && !tipoCaminhao.matches("Fim"));
 
         while(!tipoCaminhao.matches("Fim")) {
             System.out.printf("Informe a Capacidade Total de Pluviômetros do Caminhão: ");
             totalPluviometros = lerInteiro();
-            index = totalPluviometros;
 
-            while(index > 0) {
+            while(index < totalPluviometros) {
                 do {
-                    System.out.printf("Informe o Tipo do pluviômetro " + pluviometrosLista.values() + ": " );
+                    if(index == 0) {
+                        System.out.println("Tipos de Pluviômetro:");
+                        for (Map.Entry<Double, String> pluviometros : pluviometrosLista.entrySet()) {
+                            System.out.println("[" + pluviometros.getValue() + ": " + pluviometros.getKey() + "cm²]");
+                        }
+                    }
+                    System.out.printf("Informe o Tipo do " + (index + 1) + "º pluviômetro: ");
+
                     pluviometro = lerString();
                     existeTipoPluviometro = pluviometrosLista.containsValue(pluviometro);
                     if(!existeTipoPluviometro) {
-                        System.out.println("Tipo de Pluviômetro inválido!\n");
+                        System.out.println(">> O Tipo de Pluviômetro informado não está cadastrado!\n");
                     }else {
                         pluviometrosCaminhao.add(pluviometro);
                         for(Map.Entry<Double, String> pluviometroEntry : pluviometrosLista.entrySet()) {
@@ -53,7 +58,7 @@ public class Selecao extends Controle {
                     }
                 }while(!existeTipoPluviometro);
 
-                index--;
+                index++;
             }
 
             if(totalPluviometros != 0) {
@@ -61,6 +66,7 @@ public class Selecao extends Controle {
                 caminhoes.add(caminhao);
             }
 
+            index = 0;
             capacidadeTotal = 0.0;
             pluviometrosCaminhao = new ArrayList<String>();
 
@@ -68,7 +74,7 @@ public class Selecao extends Controle {
                 System.out.printf("\nInforme o Tipo do Caminhão: ");
                 tipoCaminhao = lerString();
                 if(!tipoCaminhao.matches("Alfa") && !tipoCaminhao.matches("Beta") && !tipoCaminhao.matches("Fim")) {
-                    System.out.println("Tipo do Caminhão só poder ser 'Alfa' ou 'Beta'. Digite 'Fim' para sair.");
+                    System.out.println(">> O Tipo do Caminhão só poder ser 'Alfa' ou 'Beta'. Digite 'Fim' para sair.");
                 }
             }while(!tipoCaminhao.matches("Alfa") && !tipoCaminhao.matches("Beta") && !tipoCaminhao.matches("Fim"));
         }
