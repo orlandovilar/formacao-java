@@ -21,9 +21,10 @@ public class Controle {
         Integer inteiro = 0;
         String string = br.readLine();
 
-        if(string.matches("-?\\d+") && !string.isEmpty() && !string.isBlank()) {
+        try {
             inteiro = Integer.parseInt(string);
-        }else {
+        }catch(NumberFormatException excecaoFormatoNumero) {
+            System.out.println("\nMensagem de Erro: " + excecaoFormatoNumero.getMessage());
             System.out.println(">> O número informado não é válido!");
         }
 
