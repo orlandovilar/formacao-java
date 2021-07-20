@@ -1,6 +1,10 @@
 package javaPilha;
 
+//apenas para testar o tratamento de exceções
 public class Conta {
 
-    void depositar(){}
+	void deposita() throws MinhaExcecao {
+	    //codigo omitido
+	}
+
 }
