@@ -1,21 +1,23 @@
 package listaDeExercicios1.exercicio04;
 
+import java.util.Optional;
+
 /**
  * @author José Orlando R. Vilar
  */
 public class ControleRemoto {
 
     public void aumentarVolume(Televisao televisao) {
-        if(televisao != null) {
-            if (televisao.getVolumeSom() < 10) {
-                televisao.setVolumeSom(televisao.getVolumeSom() + 1);
-                System.out.println("Volume da Televisão aumentou para " + televisao.getVolumeSom());
-            } else {
-                System.out.println("O Volume da Televisão já está no máximo!");
-            }
-        }else {
-            System.out.println(">>>> Televisão inválida, não pode ser nulo!");
-        }
+        System.out.println(
+            Optional.ofNullable(televisao).
+                    map(tv -> {
+                        if (tv.getVolumeSom() < 10) {
+                            tv.setVolumeSom(tv.getVolumeSom() + 1);
+                            return "Volume da Televisão aumentou para " + tv.getVolumeSom();
+                        }
+                        return "O Volume da Televisão já está no máximo!";
+                    }).orElse(">>>> Televisão inválida, não pode ser nulo!!!")
+        );
     }
 
     public void diminuirVolume(Televisao televisao) {
