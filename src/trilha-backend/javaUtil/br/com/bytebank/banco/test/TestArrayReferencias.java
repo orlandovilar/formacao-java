@@ -1,9 +1,9 @@
 package javaUtil.br.com.bytebank.banco.test;
 
-import javaUtil.br.com.bytebank.banco.modelo.Cliente;
-import javaUtil.br.com.bytebank.banco.modelo.Conta;
-import javaUtil.br.com.bytebank.banco.modelo.ContaCorrente;
-import javaUtil.br.com.bytebank.banco.modelo.ContaPoupanca;
+import br.com.bytebank.banco.modelo.Cliente;
+import br.com.bytebank.banco.modelo.Conta;
+import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 public class TestArrayReferencias {
 	
@@ -11,6 +11,8 @@ public class TestArrayReferencias {
 		
 		//int[] idades = new int[5];
 		Object[] referencias = new Object[5];
+		
+		System.out.println(referencias.length);
 		
 		ContaCorrente cc1 = new ContaCorrente(22, 11);
 		referencias[0] = cc1;
