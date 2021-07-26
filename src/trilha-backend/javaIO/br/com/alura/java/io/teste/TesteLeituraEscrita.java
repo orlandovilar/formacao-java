@@ -8,7 +8,8 @@ public class TesteLeituraEscrita {
         //lerArquivo();
         //escreverArquivo();
         //lerEscreverArquivo();
-        criarArquivoFileWriter();
+        //criarArquivoFileWriter();
+        criarArquivoPrintStream();
     }
 
     public static void lerArquivo() throws IOException {
@@ -74,5 +75,17 @@ public class TesteLeituraEscrita {
         bw.write("Estagiário");
 
         bw.close();
+    }
+
+    public static void criarArquivoPrintStream() throws FileNotFoundException {
+        PrintStream ps = new PrintStream("lorem4.txt");
+
+        ps.println("José Orlando");
+        ps.println("Ramos Vilar");
+        ps.println();
+        ps.println();
+        ps.println("28 anos.");
+
+        ps.close();
     }
 }
