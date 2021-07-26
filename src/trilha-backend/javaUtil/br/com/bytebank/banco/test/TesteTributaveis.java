@@ -1,8 +1,8 @@
 package javaUtil.br.com.bytebank.banco.test;
 
-import br.com.bytebank.banco.modelo.CalculadorDeImposto;
-import br.com.bytebank.banco.modelo.ContaCorrente;
-import br.com.bytebank.banco.modelo.SeguroDeVida;
+import javaUtil.br.com.bytebank.banco.modelo.CalculadorDeImposto;
+import javaUtil.br.com.bytebank.banco.modelo.ContaCorrente;
+import javaUtil.br.com.bytebank.banco.modelo.SeguroDeVida;
 
 //classe Teste
 public class TesteTributaveis {

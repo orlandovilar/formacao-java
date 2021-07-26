@@ -1,8 +1,8 @@
 package javaUtil.br.com.bytebank.banco.test;
 
-import br.com.bytebank.banco.modelo.Conta;
-import br.com.bytebank.banco.modelo.ContaCorrente;
-import br.com.bytebank.banco.modelo.GuardadorDeContas;
+import javaUtil.br.com.bytebank.banco.modelo.Conta;
+import javaUtil.br.com.bytebank.banco.modelo.ContaCorrente;
+import javaUtil.br.com.bytebank.banco.modelo.GuardadorDeContas;
 
 public class TesteGuardadorContas {
 
@@ -11,10 +11,10 @@ public class TesteGuardadorContas {
 		GuardadorDeContas guardador = new GuardadorDeContas();
 		
 		Conta cc = new ContaCorrente(22, 11);
-		guardador.adiciona(cc);
+		guardador.adicionar(cc);
 
 		Conta cc2 = new ContaCorrente(22, 22);
-		guardador.adiciona(cc2);
+		guardador.adicionar(cc2);
 		
 		int tamanho = guardador.getQuantidadeDeElementos();
 		System.out.println(tamanho);

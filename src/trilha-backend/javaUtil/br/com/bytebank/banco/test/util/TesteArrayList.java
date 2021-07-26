@@ -1,10 +1,10 @@
 package javaUtil.br.com.bytebank.banco.test.util;
 
+import javaUtil.br.com.bytebank.banco.modelo.Conta;
+import javaUtil.br.com.bytebank.banco.modelo.ContaCorrente;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import br.com.bytebank.banco.modelo.Conta;
-import br.com.bytebank.banco.modelo.ContaCorrente;
 
 public class TesteArrayList {
 

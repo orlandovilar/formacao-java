@@ -1,7 +1,5 @@
 package javaUtil.br.com.bytebank.banco.modelo;
 
-import java.util.Arrays;
-
 public class GuardadorDeContas {
 
     private Conta[] referencias;

@@ -1,9 +1,9 @@
 package javaUtil.br.com.bytebank.banco.test;
 
-import br.com.bytebank.banco.modelo.Cliente;
-import br.com.bytebank.banco.modelo.Conta;
-import br.com.bytebank.banco.modelo.ContaCorrente;
-import br.com.bytebank.banco.modelo.ContaPoupanca;
+import javaUtil.br.com.bytebank.banco.modelo.Cliente;
+import javaUtil.br.com.bytebank.banco.modelo.Conta;
+import javaUtil.br.com.bytebank.banco.modelo.ContaCorrente;
+import javaUtil.br.com.bytebank.banco.modelo.ContaPoupanca;
 
 public class TestArrayReferencias {
 	

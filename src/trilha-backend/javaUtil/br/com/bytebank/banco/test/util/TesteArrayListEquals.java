@@ -2,8 +2,8 @@ package javaUtil.br.com.bytebank.banco.test.util;
 
 import java.util.ArrayList;
 
-import br.com.bytebank.banco.modelo.Conta;
-import br.com.bytebank.banco.modelo.ContaCorrente;
+import javaUtil.br.com.bytebank.banco.modelo.Conta;
+import javaUtil.br.com.bytebank.banco.modelo.ContaCorrente;
 
 public class TesteArrayListEquals {
 
