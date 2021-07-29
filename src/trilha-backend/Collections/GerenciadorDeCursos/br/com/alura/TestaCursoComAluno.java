@@ -23,5 +23,9 @@ public class TestaCursoComAluno {
         System.out.print("O aluno a1 está matriculado? ");
         System.out.println(javaColecoes.estaMatriculado(a1));
 
+        Aluno a4 = new Aluno("Gustavo Ghastine", 24631);
+        System.out.print("O aluno a1 está matriculado? ");
+        System.out.println(javaColecoes.estaMatriculado(a4));
+
     }
 }
