@@ -14,31 +14,38 @@ public class OrdenaString {
         palavras.add("casa");
         palavras.add("caelum");
 
-        Comparator<String> comparador = new ComparadorPorTamanho();
+        // forma destrinchada
+        Comparator<String> comparador = (s1, s2) -> Integer.compare(s1.length(), s2.length());
         palavras.sort(comparador);
+
+        //forma compacta
+        palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+
+//        palavras.sort(new Comparator<String>() {
+//            @Override
+//            public int compare(String s1, String s2) {
+//                if(s1.length() < s2.length())
+//                    return -1;
+//                if(s1.length() > s2.length())
+//                    return 1;
+//                return 0;
+//            }
+//        });
+
         System.out.println(palavras);
 
-        Consumer<String> consumidor = new ImprimeNaLinha();
-        palavras.forEach(consumidor);
-    }
-}
+        // forma destrinchada
+        Consumer<String> impressor = s -> System.out.println(s);
+        palavras.forEach(impressor);
 
-class ImprimeNaLinha implements Consumer<String> {
+        //forma compacta
+        palavras.forEach(s -> System.out.println(s));
 
-    @Override
-    public void accept(String s) {
-        System.out.println(s);
-    }
-}
-
-class ComparadorPorTamanho implements Comparator<String> {
-
-    @Override
-    public int compare(String s1, String s2) {
-        if(s1.length() < s2.length())
-            return -1;
-        if(s1.length() > s2.length())
-            return 1;
-        return 0;
+//        palavras.forEach(new Consumer<String>() {
+//            @Override
+//            public void accept(String s) {
+//                System.out.println(s);
+//            }
+//        });
     }
 }
