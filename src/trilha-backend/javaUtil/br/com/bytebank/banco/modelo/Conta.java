@@ -36,9 +36,9 @@ public abstract class Conta extends Object {
      * Valor precisa ser maior do que o saldo.
      * 
      * @param valor
-     * @throws SaldoInsuficienteException
+     * @throws javaUtil.br.com.bytebank.banco.modelo.SaldoInsuficienteException
      */
-    public void saca(double valor) throws SaldoInsuficienteException{
+    public void saca(double valor) throws SaldoInsuficienteException, javaUtil.br.com.bytebank.banco.modelo.SaldoInsuficienteException {
     	
         if(this.saldo < valor) {
             throw new SaldoInsuficienteException("Saldo: " + this.saldo + ", Valor: " + valor);

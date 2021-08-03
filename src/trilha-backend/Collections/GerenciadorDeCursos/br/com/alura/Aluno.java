@@ -1,7 +1,5 @@
 package Collections.GerenciadorDeCursos.br.com.alura;
 
-import java.util.Objects;
-
 public class Aluno {
     private String nome;
     private int matricula;
