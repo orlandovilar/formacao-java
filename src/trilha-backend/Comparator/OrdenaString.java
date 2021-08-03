@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class OrdenaString {
 
@@ -15,8 +16,8 @@ public class OrdenaString {
         palavras.add("caelum");
 
         // forma destrinchada
-        Comparator<String> comparador = (s1, s2) -> Integer.compare(s1.length(), s2.length());
-        palavras.sort(comparador);
+        Comparator<String> comparador1 = (s1, s2) -> Integer.compare(s1.length(), s2.length());
+        palavras.sort(comparador1);
 
         //forma compacta
         palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
@@ -32,10 +33,26 @@ public class OrdenaString {
 //            }
 //        });
 
+        //forma compacta
+        palavras.sort(Comparator.comparing(s -> s.length()));
+
+        //forma mais compacta ainda
+        palavras.sort(Comparator.comparing(String::length));
+
+        //forma destrinchada
+        Function<String, Integer> funcao = new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) {
+                return s.length();
+            }
+        };
+        Comparator<String> comparador2 = Comparator.comparing(funcao);
+        palavras.sort(comparador2);
+
         System.out.println(palavras);
 
         // forma destrinchada
-        Consumer<String> impressor = s -> System.out.println(s);
+        Consumer<String> impressor = System.out::println;
         palavras.forEach(impressor);
 
         //forma compacta
