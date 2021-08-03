@@ -3,7 +3,7 @@ package Collections.GerenciadorDeCursos.br.com.alura;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TestandoListas {
+public class TestaListas {
 
     public static void main(String[] args) {
         String aula1 = "Conhecendo mais de Listas";
