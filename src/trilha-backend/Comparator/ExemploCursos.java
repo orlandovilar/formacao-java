@@ -40,5 +40,9 @@ public class ExemploCursos {
                         c -> c.getAlunos()));
 
         System.out.println(map);
+
+        System.out.println(cursos.stream()
+                .mapToInt(c -> c.getAlunos())
+                .average());
     }
 }
