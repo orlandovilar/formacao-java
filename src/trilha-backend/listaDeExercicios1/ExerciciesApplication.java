@@ -96,8 +96,10 @@ public class ExerciciesApplication {
         elevador.inicializar(5, 8);
         elevador.entrar(null);
         elevador.entrar(pessoa1);
+        elevador.entrar(pessoa1);
         elevador.entrar(pessoa2);
         elevador.sair(null);
+        elevador.sair(pessoa1);
         elevador.sair(pessoa1);
         elevador.sair(pessoa2);
         elevador.entrar(pessoa1);
@@ -141,71 +143,72 @@ public class ExerciciesApplication {
 
         List<Integer> canais = Arrays.asList(3, 4, 6, 7, 9, 11, 13);
 
-        Televisao televisao = new Televisao(9, canais, new ControleRemotoService(), 4);
+        Televisao televisao = new Televisao(9, canais, 4);
+        ControleRemotoService controleRemoto = new ControleRemotoService();
 
-        televisao.getControle().aumentarVolume(null);
-        televisao.getControle().diminuirVolume(null);
-        televisao.getControle().aumentarVolume(televisao);
-        televisao.getControle().aumentarVolume(televisao);
-        televisao.getControle().aumentarVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
-        televisao.getControle().diminuirVolume(televisao);
+        controleRemoto.aumentarVolume(null);
+        controleRemoto.diminuirVolume(null);
+        controleRemoto.aumentarVolume(televisao);
+        controleRemoto.aumentarVolume(televisao);
+        controleRemoto.aumentarVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
+        controleRemoto.diminuirVolume(televisao);
 
-        televisao.getControle().aumentarCanal(null);
-        televisao.getControle().diminuirCanal(null);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(null);
+        controleRemoto.diminuirCanal(null);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
 
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
 
-        televisao.getControle().consultarVolume(null);
-        televisao.getControle().consultarCanal(null);
-        televisao.getControle().consultarVolume(televisao);
-        televisao.getControle().consultarCanal(televisao);
+        controleRemoto.consultarVolume(null);
+        controleRemoto.consultarCanal(null);
+        controleRemoto.consultarVolume(televisao);
+        controleRemoto.consultarCanal(televisao);
 
 
-        televisao.getControle().trocarCanal(1,null);
-        televisao.getControle().trocarCanal(13, televisao);
-        televisao.getControle().trocarCanal(3, televisao);
-        televisao.getControle().trocarCanal(5, televisao);
+        controleRemoto.trocarCanal(1,null);
+        controleRemoto.trocarCanal(13, televisao);
+        controleRemoto.trocarCanal(3, televisao);
+        controleRemoto.trocarCanal(5, televisao);
 
-        televisao.getControle().aumentarCanal(televisao);
-        televisao.getControle().diminuirCanal(televisao);
+        controleRemoto.aumentarCanal(televisao);
+        controleRemoto.diminuirCanal(televisao);
 
-        televisao.getControle().consultarVolume(televisao);
-        televisao.getControle().consultarCanal(televisao);
+        controleRemoto.consultarVolume(televisao);
+        controleRemoto.consultarCanal(televisao);
 
         // Testes para 5ª Questão
         System.out.println("\n>>>>> 5ª Questão - Pluviômetros:");

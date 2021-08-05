@@ -10,13 +10,11 @@ import java.util.List;
 public class Televisao {
     private Integer volumeSom;
     private List<Integer> canais;
-    private ControleRemotoService controle;
     private Integer canalAtual;
 
-    public Televisao(Integer volumeSom, List<Integer> canais, ControleRemotoService controle, Integer canalAtual) {
+    public Televisao(Integer volumeSom, List<Integer> canais, Integer canalAtual) {
         this.volumeSom = volumeSom;
         this.canais = canais;
-        this.controle = controle;
         this.canalAtual = canalAtual;
     }
 
@@ -26,10 +24,6 @@ public class Televisao {
 
     public List<Integer> getCanais() {
         return canais;
-    }
-
-    public ControleRemotoService getControle() {
-        return controle;
     }
 
     public Integer getCanalAtual() {
@@ -42,10 +36,6 @@ public class Televisao {
 
     public void setCanais(List<Integer> canais) {
         this.canais = canais;
-    }
-
-    public void setControle(ControleRemotoService controle) {
-        this.controle = controle;
     }
 
     public void setCanalAtual(Integer canalAtual) {

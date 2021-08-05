@@ -20,7 +20,7 @@ public class SelecaoService extends ControleService {
         Double capacidadeTotal = 0.0;
         Boolean existeTipoPluviometro;
         String pluviometro;
-        Integer index = 0;
+        int index = 0;
         Caminhao caminhao;
 
         pluviometrosLista.put(81.1, "Sem Funil");
