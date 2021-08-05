@@ -1,10 +1,9 @@
 package listaDeExercicios1;
 
-import listaDeExercicios1.Model.Elevador;
-import listaDeExercicios1.Model.ControleRemoto;
+import listaDeExercicios1.Service.ControleRemotoService;
 import listaDeExercicios1.Model.Televisao;
 import listaDeExercicios1.Model.Caminhao;
-import listaDeExercicios1.Model.Selecao;
+import listaDeExercicios1.Service.SelecaoService;
 import listaDeExercicios1.Service.AgendaService;
 import listaDeExercicios1.Service.ElevadorService;
 import listaDeExercicios1.Service.PessoaService;
@@ -142,7 +141,7 @@ public class ExerciciesApplication {
 
         List<Integer> canais = Arrays.asList(3, 4, 6, 7, 9, 11, 13);
 
-        Televisao televisao = new Televisao(9, canais, new ControleRemoto(), 4);
+        Televisao televisao = new Televisao(9, canais, new ControleRemotoService(), 4);
 
         televisao.getControle().aumentarVolume(null);
         televisao.getControle().diminuirVolume(null);
@@ -211,16 +210,8 @@ public class ExerciciesApplication {
         // Testes para 5ª Questão
         System.out.println("\n>>>>> 5ª Questão - Pluviômetros:");
 
-        Map<Double, String> pluviometrosLista = new HashMap<>();
-        pluviometrosLista.put(81.1, "Sem Funil");
-        pluviometrosLista.put(165.1, "Com Funil");
-        pluviometrosLista.put(181.3, "Squitter");
-        pluviometrosLista.put(200.0, "Hellmann");
-        pluviometrosLista.put(471.1, "Texas");
-        pluviometrosLista.put(500.0, "Ville de Paris");
-
-        List<Caminhao> caminhoes = Selecao.inserirCaminhoes(pluviometrosLista);
-        Selecao.selecionarCaminhaoMaisApto(caminhoes);
+        List<Caminhao> caminhoes = SelecaoService.inserirCaminhoes();
+        SelecaoService.selecionarCaminhaoMaisApto(caminhoes);
 
 
     }

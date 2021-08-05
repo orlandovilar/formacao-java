@@ -1,6 +1,6 @@
 package listaDeExercicios1.Model;
 
-import listaDeExercicios1.Model.ControleRemoto;
+import listaDeExercicios1.Service.ControleRemotoService;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import java.util.List;
 public class Televisao {
     private Integer volumeSom;
     private List<Integer> canais;
-    private ControleRemoto controle;
+    private ControleRemotoService controle;
     private Integer canalAtual;
 
-    public Televisao(Integer volumeSom, List<Integer> canais, ControleRemoto controle, Integer canalAtual) {
+    public Televisao(Integer volumeSom, List<Integer> canais, ControleRemotoService controle, Integer canalAtual) {
         this.volumeSom = volumeSom;
         this.canais = canais;
         this.controle = controle;
@@ -28,7 +28,7 @@ public class Televisao {
         return canais;
     }
 
-    public ControleRemoto getControle() {
+    public ControleRemotoService getControle() {
         return controle;
     }
 
@@ -44,7 +44,7 @@ public class Televisao {
         this.canais = canais;
     }
 
-    public void setControle(ControleRemoto controle) {
+    public void setControle(ControleRemotoService controle) {
         this.controle = controle;
     }
 

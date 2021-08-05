@@ -2,9 +2,11 @@ package listaDeExercicios1.Service;
 
 import listaDeExercicios1.Model.Elevador;
 import listaDeExercicios1.Model.Pessoa;
-
 import java.util.ArrayList;
 
+/**
+ * @author José Orlando R. Vilar
+ */
 public class ElevadorService extends Elevador {
 
     public void inicializar(Integer capacidade, Integer totalAndares) {

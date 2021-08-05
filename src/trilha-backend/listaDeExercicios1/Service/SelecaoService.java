@@ -1,5 +1,6 @@
-package listaDeExercicios1.Model;
+package listaDeExercicios1.Service;
 
+import listaDeExercicios1.Model.Caminhao;
 import listaDeExercicios1.Service.ControleService;
 
 import java.io.IOException;
@@ -8,9 +9,10 @@ import java.util.*;
 /**
  * @author José Orlando R. Vilar
  */
-public class Selecao extends ControleService {
+public class SelecaoService extends ControleService {
+    private static Map<Double, String> pluviometrosLista = new HashMap<>();
 
-    public static List<Caminhao> inserirCaminhoes(Map<Double, String> pluviometrosLista) throws IOException {
+    public static List<Caminhao> inserirCaminhoes() throws IOException {
         List<Caminhao> caminhoes = new ArrayList<>();
         String tipoCaminhao = "";
         Integer totalPluviometros = 0;
@@ -20,6 +22,13 @@ public class Selecao extends ControleService {
         String pluviometro;
         Integer index = 0;
         Caminhao caminhao;
+
+        pluviometrosLista.put(81.1, "Sem Funil");
+        pluviometrosLista.put(165.1, "Com Funil");
+        pluviometrosLista.put(181.3, "Squitter");
+        pluviometrosLista.put(200.0, "Hellmann");
+        pluviometrosLista.put(471.1, "Texas");
+        pluviometrosLista.put(500.0, "Ville de Paris");
 
         System.out.printf("\nInserindo Caminhões:\n");
 
@@ -35,7 +44,7 @@ public class Selecao extends ControleService {
 
             if(!tipoCaminhao.matches("Fim")) {
                 do {
-                    System.out.printf("Informe a Capacidade Total de Pluviômetros do Caminhão: ");
+                    System.out.printf("Informe a Quantidade de Pluviômetros do Caminhão: ");
                     totalPluviometros = lerInteiro();
                 }while(totalPluviometros == 0);
 
@@ -84,6 +93,7 @@ public class Selecao extends ControleService {
         Caminhao caminhaoMaisApto;
 
         if(caminhoes != null && !caminhoes.isEmpty()) {
+
             Comparator<Caminhao> maisApto = (caminhao1, caminhao2) -> {
                 if (caminhao1.getCapacidadeTotal() > caminhao2.getCapacidadeTotal()) return 1;
                 if (caminhao1.getCapacidadeTotal() < caminhao2.getCapacidadeTotal()) return -1;
@@ -96,8 +106,13 @@ public class Selecao extends ControleService {
             System.out.println("Tipo do Caminhão: " + caminhaoMaisApto.getTipo());
             System.out.println("Quantidade de Pluviômetros: " + caminhaoMaisApto.getTotalPluviometros() + " pluviômetros");
             System.out.printf("Pluviômetros transportados:\n");
-            caminhaoMaisApto.getPluviometros().forEach(p -> System.out.println("> " + p));
-            System.out.println("Capacidade Total de carga em cm²: " + caminhaoMaisApto.getCapacidadeTotal());
+            caminhaoMaisApto.getPluviometros().forEach(p -> {
+                for (Map.Entry<Double, String> pluviometros : pluviometrosLista.entrySet()) {
+                    if(p.matches(pluviometros.getValue()))
+                        System.out.println("> " + pluviometros.getValue() + ": " + pluviometros.getKey() + "cm²");
+                }
+            });
+            System.out.println("Capacidade Total de carga: " + caminhaoMaisApto.getCapacidadeTotal() + "cm²");
         }else {
             System.out.println("Nenhum Caminhão foi cadastrado!");
         }
