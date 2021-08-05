@@ -1,5 +1,6 @@
-package listaDeExercicios1.Service;
+package listaDeExercicios1.Test;
 
+import listaDeExercicios1.Service.PessoaService;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
