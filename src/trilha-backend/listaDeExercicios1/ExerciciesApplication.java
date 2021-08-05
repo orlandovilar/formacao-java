@@ -21,22 +21,22 @@ public class ExerciciesApplication {
         System.out.println("> 1ª Questão - Pessoa:\n");
 
         PessoaService pessoa1 = new PessoaService("José Orlando", "25/03/1993", 1.74);
-        pessoa1.imprimirDados(pessoa1);
+        pessoa1.imprimirDados();
 
         PessoaService pessoa2 = new PessoaService("Gustavo Ghastine", "06/11/1978", 1.88);
-        pessoa2.imprimirDados(pessoa2);
+        pessoa2.imprimirDados();
 
         PessoaService pessoa3 = new PessoaService("Rayssa", "03/10/1994", 1.53);
-        pessoa3.imprimirDados(pessoa3);
+        pessoa3.imprimirDados();
 
         PessoaService pessoa4 = new PessoaService("Tayse", "10/12/1995", 1.72);
-        pessoa4.imprimirDados(pessoa4);
+        pessoa4.imprimirDados();
 
         PessoaService pessoa5 = new PessoaService("Mácio", "02/02/1996", 1.76);
-        pessoa5.imprimirDados(pessoa5);
+        pessoa5.imprimirDados();
 
         PessoaService pessoa6 = new PessoaService("Fabrície", "01/01/1999", 1.68);
-        pessoa6.imprimirDados(pessoa6);
+        pessoa6.imprimirDados();
 
         // Testes para 2ª Questão
         System.out.println(">> 2ª Questão - Agenda:");

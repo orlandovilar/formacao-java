@@ -23,27 +23,37 @@ public class PessoaService extends Pessoa {
         super(nome, idade, altura);
     }
 
-    public void imprimirDados(Pessoa pessoa) throws ParseException {
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        System.out.println("Nome: " + pessoa.getNome());
-        if(pessoa.getDataNascimento() != null) {
-            System.out.println("Data de Nascimento: " + pessoa.getDataNascimento());
-            calcularIdade(pessoa);
+    public String imprimirDados() throws ParseException {
+        String estruturaDataDeNascimento;
+        if(getDataNascimento() != null) {
+            estruturaDataDeNascimento = "Data de Nascimento: " + getDataNascimento();
+            calcularIdade();
         }else {
-            System.out.println("Data de Nascimento: não informado.");
+            estruturaDataDeNascimento = "Data de Nascimento: não informado.";
         }
-        System.out.println("Altura: " + new BigDecimal(pessoa.getAltura()).setScale(2, RoundingMode.HALF_UP));
-        System.out.println("Idade: " + pessoa.getIdade());
-        System.out.printf("\n");
+        String estruturaDadosPessoa = "Nome: " + getNome()
+                + "\n"
+                + estruturaDataDeNascimento
+                + "\n"
+                + "Altura: " + new BigDecimal(getAltura()).setScale(2, RoundingMode.HALF_UP)
+                + "\n"
+                + "Idade: " + getIdade()
+                + "\n";
+
+        System.out.println(estruturaDadosPessoa);
+
+        return estruturaDadosPessoa;
     }
 
-    public void calcularIdade(Pessoa pessoa) throws ParseException {
+    public int calcularIdade() throws ParseException {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         LocalDate hoje = LocalDate.now();
         Calendar calendarioDataAniversario = Calendar.getInstance();
-        calendarioDataAniversario.setTime(formato.parse(pessoa.getDataNascimento()));
+        calendarioDataAniversario.setTime(formato.parse(getDataNascimento()));
         LocalDate aniversario = LocalDate.of(calendarioDataAniversario.get(Calendar.YEAR), calendarioDataAniversario.get(Calendar.MONTH) + 1, calendarioDataAniversario.get(Calendar.DATE));
         Period periodo = Period.between(aniversario, hoje);
-        pessoa.setIdade(periodo.getYears());
+        setIdade(periodo.getYears());
+
+        return getIdade();
     }
 }

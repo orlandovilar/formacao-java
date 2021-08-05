@@ -79,7 +79,7 @@ public class AgendaService extends Agenda {
                 filter(p -> getPessoas().indexOf(p) == index).
                 forEach(p -> {
                     try {
-                        p.imprimirDados(p);
+                        p.imprimirDados();
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
@@ -98,7 +98,7 @@ public class AgendaService extends Agenda {
             getPessoas().stream().forEach(p -> {
             System.out.println("Posição " + (getPessoas().indexOf(p) + 1) + ":");
                 try {
-                    p.imprimirDados(p);
+                    p.imprimirDados();
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
