@@ -21,8 +21,8 @@ class PessoaServiceTest {
     }
 
     @Test
-    void imprimirDadosDeveImprimirDadosDaPessoaComDataDeNascimento() throws ParseException {
-        PessoaService pessoaService = new PessoaService("José Orlando", "25/03/1993", 1.74);
+    void deveImprimirDadosDaPessoaComDataDeNascimento() throws ParseException {
+        PessoaService pessoaService = new PessoaService("José Orlando", 1.74, "25/03/1993");
         String retorno = pessoaService.imprimirDados();
         String estruturaDadosPessoa = "Nome: " + pessoaService.getNome()
                 + "\n"
@@ -37,7 +37,7 @@ class PessoaServiceTest {
     }
 
     @Test
-    void imprimirDadosDeveImprimirDadosDaPessoaSemDataDeNascimento() throws ParseException {
+    void deveImprimirDadosDaPessoaSemDataDeNascimento() throws ParseException {
         PessoaService pessoaService = new PessoaService("Pamela", 30, 1.60);
         String retorno = pessoaService.imprimirDados();
         String estruturaDadosPessoa = "Nome: " + pessoaService.getNome()
@@ -53,10 +53,18 @@ class PessoaServiceTest {
     }
 
     @Test
-    void calcularIdadeDePessoa() throws ParseException {
-        PessoaService pessoaService = new PessoaService("José Orlando", "25/03/1993", 1.74);
+    void calcularIdadeDePessoaComDataDeNascimentoValida() throws ParseException {
+        PessoaService pessoaService = new PessoaService("José Orlando", 1.74, "25/03/1993");
         pessoaService.calcularIdade();
 
         assertEquals(28, pessoaService.getIdade());
+    }
+
+    @Test
+    void calcularIdadeDePessoaComDataDeNascimentoNull() throws ParseException {
+        PessoaService pessoaService = new PessoaService("José Orlando", 1.74, null);
+        pessoaService.calcularIdade();
+
+        assertEquals(0, pessoaService.getIdade());
     }
 }

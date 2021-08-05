@@ -9,7 +9,7 @@ public class Pessoa {
     private Double altura;
     private int idade;
 
-    public Pessoa(String nome, String dataNascimento, Double altura) {
+    public Pessoa(String nome, Double altura, String dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.altura = altura;
