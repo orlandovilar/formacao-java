@@ -6,6 +6,7 @@ import listaDeExercicios1.Model.Televisao;
 import listaDeExercicios1.Model.Caminhao;
 import listaDeExercicios1.Model.Selecao;
 import listaDeExercicios1.Service.AgendaService;
+import listaDeExercicios1.Service.ElevadorService;
 import listaDeExercicios1.Service.PessoaService;
 import java.io.IOException;
 import java.text.ParseException;
@@ -91,10 +92,9 @@ public class ExerciciesApplication {
 
         // Testes para 3ª Questão
         System.out.println("\n>>> 3ª Questão - Elevador:");
-        Elevador elevador = new Elevador();
+        ElevadorService elevador = new ElevadorService();
 
         elevador.inicializar(5, 8);
-
         elevador.entrar(null);
         elevador.entrar(pessoa1);
         elevador.entrar(pessoa2);

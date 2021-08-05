@@ -1,6 +1,9 @@
 package listaDeExercicios1.Service;
 
 import listaDeExercicios1.Model.Pessoa;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -29,7 +32,7 @@ public class PessoaService extends Pessoa {
         }else {
             System.out.println("Data de Nascimento: não informado.");
         }
-        System.out.println("Altura: " + pessoa.getAltura());
+        System.out.println("Altura: " + new BigDecimal(pessoa.getAltura()).setScale(2, RoundingMode.HALF_UP));
         System.out.println("Idade: " + pessoa.getIdade());
         System.out.printf("\n");
     }
