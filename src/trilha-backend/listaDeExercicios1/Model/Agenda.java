@@ -1,105 +1,32 @@
 package listaDeExercicios1.Model;
 
-import listaDeExercicios1.Model.Pessoa;
+import listaDeExercicios1.Service.PessoaService;
 import java.util.List;
 
 /**
  * @author José Orlando R. Vilar
  */
 public class Agenda {
-    private Integer index;
-    private List<Pessoa> pessoas;
+    private int index;
+    private List<PessoaService> pessoas;
 
-    public Agenda(List<Pessoa> pessoas) {
+    public Agenda(List<PessoaService> pessoas) {
         this.pessoas = pessoas;
-    }
-
-    public void adicionarPessoa(Pessoa pessoa) {
-        if(pessoa != null) {
-            if (!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
-                if (this.pessoas.size() < 10) {
-                    this.pessoas.add(pessoa);
-                    System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
-                } else {
-                    System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
-                }
-            } else {
-                System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
-            }
-        }else {
-            System.out.println("\n>> Pessoa inválida!");
-        }
-    }
-
-    public void adicionarPessoa(String nome, Integer idade, Double altura) {
-        Pessoa pessoa = new Pessoa(nome, idade, altura);
-
-        if(!this.pessoas.stream().anyMatch(p -> p.getNome().matches(pessoa.getNome()))) {
-            if(this.pessoas.size() < 10) {
-                this.pessoas.add(pessoa);
-                System.out.println("\n" + pessoa.getNome() + " foi adicionado à Agenda com sucesso.");
-            }else {
-                System.out.println("\n" + pessoa.getNome() + " não pôde ser adicionado. Agenda cheia!");
-            }
-        }else {
-            System.out.println("\n" + pessoa.getNome() + " já existe na Agenda!");
-        }
-    }
-
-    public void removerPessoa(String nome) {
-        boolean existe;
-        if(!this.pessoas.isEmpty()) {
-            existe = this.pessoas.stream().anyMatch(p -> p.getNome().matches(nome));
-            if(existe) {
-                this.pessoas.remove(this.pessoas.get(buscarPessoa(nome)));
-                System.out.println("\n" + nome + " foi removido da Agenda com êxito.");
-            }else {
-                System.out.println("\n" + nome + " não foi encontrado na Agenda!");
-            }
-        }else {
-            System.out.println("\nNão foi possível remover " + nome + ". A Agenda está vazia!");
-        }
-    }
-
-    public int buscarPessoa(String nome) {
-        if(this.pessoas.stream().anyMatch(p -> p.getNome().matches(nome))) {
-           this.pessoas.stream().
-                   filter(p -> p.getNome() == nome).
-                   map(p -> this.pessoas.indexOf(p)).forEach(p -> this.index = p);
-        }else {
-            this.index = -1;
-        }
-        return this.index;
-    }
-
-    public void imprimirPessoa(int index) {
-        if (!this.pessoas.isEmpty()) {
-            if (this.pessoas.stream().anyMatch(p -> this.pessoas.indexOf(p) == index)) {
-                System.out.println("\nPosição " + (index + 1) + ":");
-                //this.pessoas.stream().
-                        //filter(p -> this.pessoas.indexOf(p) == index).
-                        //forEach(p -> p.imprimirDados());
-            } else {
-                System.out.println("\nPosição não encontrada na Agenda!");
-            }
-        } else {
-            System.out.println("\nPosição não encontrada. A Agenda está vazia!");
-        }
-    }
-
-    public void imprimirAgenda() {
-        if(!this.pessoas.isEmpty()) {
-            System.out.println("\nDados da Agenda:\n");
-            //this.pessoas.stream().forEach(p -> {
-                //System.out.println("Posição " + (this.pessoas.indexOf(p) + 1) + ":");
-                //p.imprimirDados();
-            //});
-        }else {
-            System.out.println("\nA Agenda está vazia!");
-        }
     }
 
     public Integer getIndex() {
         return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
+    }
+
+    public List<PessoaService> getPessoas() {
+        return pessoas;
+    }
+
+    public void setPessoas(List<PessoaService> pessoas) {
+        this.pessoas = pessoas;
     }
 }

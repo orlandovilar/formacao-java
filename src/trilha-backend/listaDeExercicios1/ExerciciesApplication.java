@@ -1,17 +1,14 @@
 package listaDeExercicios1;
 
-import listaDeExercicios1.Model.Pessoa;
-import listaDeExercicios1.Model.Agenda;
 import listaDeExercicios1.Model.Elevador;
 import listaDeExercicios1.Model.ControleRemoto;
 import listaDeExercicios1.Model.Televisao;
 import listaDeExercicios1.Model.Caminhao;
 import listaDeExercicios1.Model.Selecao;
+import listaDeExercicios1.Service.AgendaService;
 import listaDeExercicios1.Service.PessoaService;
-
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -22,37 +19,28 @@ public class ExerciciesApplication {
     public static void main(String[] args) throws ParseException, IOException {
         // Testes para 1ª Questão
         System.out.println("> 1ª Questão - Pessoa:\n");
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar dataNascimento = Calendar.getInstance();
-        PessoaService ps = new PessoaService();
 
-        dataNascimento.setTime(formato.parse("25/03/1993"));
-        Pessoa pessoa1 = new Pessoa("José Orlando", dataNascimento.getTime(), 1.74);
-        ps.imprimirDados(pessoa1);
+        PessoaService pessoa1 = new PessoaService("José Orlando", "25/03/1993", 1.74);
+        pessoa1.imprimirDados(pessoa1);
 
-        dataNascimento.setTime(formato.parse("06/11/1978"));
-        Pessoa pessoa2 = new Pessoa("Gustavo Ghastine", dataNascimento.getTime(), 1.88);
-        ps.imprimirDados(pessoa2);
+        PessoaService pessoa2 = new PessoaService("Gustavo Ghastine", "06/11/1978", 1.88);
+        pessoa2.imprimirDados(pessoa2);
 
-        dataNascimento.setTime(formato.parse("03/10/1994"));
-        Pessoa pessoa3 = new Pessoa("Rayssa", dataNascimento.getTime(), 1.53);
-        ps.imprimirDados(pessoa3);
+        PessoaService pessoa3 = new PessoaService("Rayssa", "03/10/1994", 1.53);
+        pessoa3.imprimirDados(pessoa3);
 
-        dataNascimento.setTime(formato.parse("10/12/1995"));
-        Pessoa pessoa4 = new Pessoa("Tayse", dataNascimento.getTime(), 1.72);
-        ps.imprimirDados(pessoa4);
+        PessoaService pessoa4 = new PessoaService("Tayse", "10/12/1995", 1.72);
+        pessoa4.imprimirDados(pessoa4);
 
-        dataNascimento.setTime(formato.parse("02/02/1996"));
-        Pessoa pessoa5 = new Pessoa("Mácio", dataNascimento.getTime(), 1.76);
-        ps.imprimirDados(pessoa5);
+        PessoaService pessoa5 = new PessoaService("Mácio", "02/02/1996", 1.76);
+        pessoa5.imprimirDados(pessoa5);
 
-        dataNascimento.setTime(formato.parse("01/01/1999"));
-        Pessoa pessoa6 = new Pessoa("Fabrície", dataNascimento.getTime(), 1.68);
-        ps.imprimirDados(pessoa6);
+        PessoaService pessoa6 = new PessoaService("Fabrície", "01/01/1999", 1.68);
+        pessoa6.imprimirDados(pessoa6);
 
         // Testes para 2ª Questão
         System.out.println(">> 2ª Questão - Agenda:");
-        Agenda agenda = new Agenda(new ArrayList<>());
+        AgendaService agenda = new AgendaService(new ArrayList<>());
 
         agenda.adicionarPessoa(null);
         agenda.adicionarPessoa(pessoa1);

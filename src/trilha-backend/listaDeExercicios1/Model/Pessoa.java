@@ -1,19 +1,15 @@
 package listaDeExercicios1.Model;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 /**
  * @author José Orlando R. Vilar
  */
 public class Pessoa {
     private String nome;
-    private Date dataNascimento;
+    private String dataNascimento;
     private Double altura;
-    private Integer idade;
+    private int idade;
 
-    public Pessoa(String nome, Date dataNascimento, Double altura) {
+    public Pessoa(String nome, String dataNascimento, Double altura) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.altura = altura;
@@ -29,7 +25,7 @@ public class Pessoa {
         return nome;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
@@ -45,7 +41,7 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
